@@ -1,6 +1,7 @@
-# montaje
+# agent-video-editor
 
-Una skill de edición de video para agentes de IA como Claude Code. Le da al agente el criterio de un editor de
+Una skill de edición de video para agentes de IA. Sirve para cualquier agente que lea skills en formato
+`SKILL.md` (Claude Code, Codex, Cursor, Gemini CLI y otros) y le da el criterio de un editor de
 YouTube: cuándo cortar, cada cuánto cambiar la pantalla, cuánto silencio aguanta una frase, cómo anclar un
 gráfico a la palabra que lo nombra, a qué volumen va la música bajo la voz y cómo se arma una miniatura que se
 lee a 160 px.
@@ -22,16 +23,17 @@ video explicativo, Short o Reel.
 ## Instalar
 
 ```bash
-npx skills add kmilo93sd/montaje
+npx skills add kmilo93sd/agent-video-editor
 ```
 
-O a mano: copia `skills/edicion-de-video/` en `~/.claude/skills/`.
+O a mano: copia `skills/edicion-de-video/` en la carpeta de skills de tu agente (en Claude Code,
+`~/.claude/skills/`).
 
 Buscar un sonido:
 
 ```bash
-node ~/.claude/skills/edicion-de-video/biblioteca/buscar.mjs whoosh
-node ~/.claude/skills/edicion-de-video/biblioteca/buscar.mjs --categoria musica --rutas
+node <carpeta-de-skills>/edicion-de-video/biblioteca/buscar.mjs whoosh
+node <carpeta-de-skills>/edicion-de-video/biblioteca/buscar.mjs --categoria musica --rutas
 ```
 
 ## Requisitos de las plantillas
