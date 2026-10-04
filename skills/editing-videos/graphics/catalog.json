@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "usage": {
+    "drop_in": "Copy the snippet's <style>, the .clip element and the <script> into a composition (for a sub-composition, inside its <template>). Give each instance a unique id. In the composition's own timeline script, before registering it, call the asset's function: gfx.<name>(tl, document.getElementById('<id>'), { at, duration, ... }). Without at/duration it reads the element's data-start and data-duration, which are local to the composition that owns tl.",
+    "theming": "Every color, size and position is a CSS custom property on the .clip element (--gfx-*). Override them in a style attribute or a more specific rule, with the values from frame.md. Do not edit the tweens to change colors.",
+    "rules": "Seekable and deterministic: one paused timeline, fromTo tweens, no Math.random, no clocks, no repeat: -1. The framework owns .clip visibility; the functions only animate children. Timing defaults follow references/graphics-and-text.md: enter at most 0.5 s before the word, content within 1 s, exit in 0.25 s.",
+    "fonts": "Snippets use generic families (system-ui, sans-serif). For a brand font, set --gfx-font and add the @font-face the HyperFrames linter asks for."
+  },
+  "assets": [
+    {
+      "id": "arrow-straight",
+      "category": "arrows",
+      "files": [
+        "arrows/arrow-straight.html",
+        "arrows/arrow-straight.svg"
+      ],
+      "description": "Straight arrow that draws on from tail to head. Rotate it with --gfx-angle.",
+      "when_to_use": "Point at one UI element or value the voice names right now: anchor data-start to that word (at most 0.5 s before it). Use one arrow per idea.",
+      "when_not_to_use": "Not as decoration, not on something the cursor already points at, and not several arrows at once on a busy screen. If the target needs a frame, use box-highlight or ring-highlight.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.5,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-angle"
+      ],
+      "call": "gfx.arrowStraight(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "arrow-curved",
+      "category": "arrows",
+      "files": [
+        "arrows/arrow-curved.html",
+        "arrows/arrow-curved.svg"
+      ],
+      "description": "Curved arrow that draws on along a smooth arc. Flip it with --gfx-flip: -1 and rotate it with --gfx-angle.",
+      "when_to_use": "Point at a target from text or a label placed beside it, or link two things on screen (\"this value goes here\"). Anchor it to the word that names the target.",
+      "when_not_to_use": "Not for a straight short hop (use arrow-straight) and not to show a process with several steps (use a diagram).",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.6,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-angle",
+        "--gfx-flip"
+      ],
+      "call": "gfx.arrowCurved(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "arrow-hand-drawn",
+      "category": "arrows",
+      "files": [
+        "arrows/arrow-hand-drawn.html",
+        "arrows/arrow-hand-drawn.svg"
+      ],
+      "description": "Loose, marker-style arrow with a wobbly shaft, drawn on like a pen stroke.",
+      "when_to_use": "Informal explainers or a casual aside (\"this little button\") where a hand-drawn look fits the brand skin.",
+      "when_not_to_use": "Not in a clean, corporate skin that uses straight shapes elsewhere: mixing both styles breaks brand consistency.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.7,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-angle",
+        "--gfx-flip"
+      ],
+      "call": "gfx.arrowHandDrawn(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "circle-hand-drawn",
+      "category": "highlights",
+      "files": [
+        "highlights/circle-hand-drawn.html",
+        "highlights/circle-hand-drawn.svg"
+      ],
+      "description": "Hand-drawn loop that circles a word, number or button, drawn on in one stroke.",
+      "when_to_use": "Mark the single value the voice is talking about (a total, an error message). Enters with its word.",
+      "when_not_to_use": "Not around large areas (use spotlight-dim) and not to circle several things one after another in the same shot; pick the one that matters.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.6,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.circleHandDrawn(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "ring-highlight",
+      "category": "highlights",
+      "files": [
+        "highlights/ring-highlight.html"
+      ],
+      "description": "Clean elliptical ring that settles in from a larger size and sends out one soft echo pulse.",
+      "when_to_use": "Highlight a round or compact target (an icon, an avatar, a toggle) in a clean UI tutorial.",
+      "when_not_to_use": "Not on rectangular rows or fields (use box-highlight), and no repeating pulse: one pulse is enough.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.4,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-ring",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-h"
+      ],
+      "call": "gfx.ringHighlight(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "box-highlight",
+      "category": "highlights",
+      "files": [
+        "highlights/box-highlight.html"
+      ],
+      "description": "Rounded rectangle outline that frames a row, field or panel.",
+      "when_to_use": "Frame a table row, an input or a menu item the voice names. Position and size with --gfx-x, --gfx-y, --gfx-w, --gfx-h in composition pixels.",
+      "when_not_to_use": "Not while the frame's content is still animating in the app (wait for the result, rule 3), and not together with a zoom on the same target in the same second.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.35,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-border",
+        "--gfx-radius",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-h"
+      ],
+      "call": "gfx.boxHighlight(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "underline-marker",
+      "category": "underlines",
+      "files": [
+        "underlines/underline-marker.html"
+      ],
+      "description": "Thick semi-transparent marker stroke that wipes in under a line of text.",
+      "when_to_use": "Emphasize a word or a short phrase in on-screen text or in the app (a label, a heading). Enters with the word.",
+      "when_not_to_use": "Not under body text the viewer is still reading, and not on more than one line at a time.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.4,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-opacity",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.underlineMarker(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "underline-hand-drawn",
+      "category": "underlines",
+      "files": [
+        "underlines/underline-hand-drawn.html",
+        "underlines/underline-hand-drawn.svg"
+      ],
+      "description": "Thin double underline drawn with a pen-like return stroke.",
+      "when_to_use": "Casual emphasis under a heading or a number, matching the hand-drawn arrows and circle.",
+      "when_not_to_use": "Not in a clean skin; use underline-marker instead.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.55,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.underlineHandDrawn(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "scribble-strike",
+      "category": "underlines",
+      "files": [
+        "underlines/scribble-strike.html",
+        "underlines/scribble-strike.svg"
+      ],
+      "description": "Zig-zag scribble that crosses out text or a value.",
+      "when_to_use": "Show that an option, an old value or a common mistake is wrong (\"don't use this field\"). Pair it with the correct option right after.",
+      "when_not_to_use": "Not over real data you then need the viewer to read; not as a joke on someone else's work.",
+      "default_duration_s": 2.0,
+      "animation_in_s": 0.5,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-stroke",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.scribbleStrike(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "spotlight-dim",
+      "category": "focus",
+      "files": [
+        "focus/spotlight-dim.html"
+      ],
+      "description": "Dims the whole frame except a rounded rectangle; the hole can move to new targets at anchored times.",
+      "when_to_use": "Pull attention to one region of a busy screen (a panel, a dialog) while the voice explains it. Use the moves option to follow the voice from region to region within the same shot.",
+      "when_not_to_use": "Not for a single small control (use a ring or arrow), not when the viewer needs to see the rest of the screen to follow along, and not combined with a zoom in the same second.",
+      "default_duration_s": 3.0,
+      "animation_in_s": 0.4,
+      "animation_out_s": 0.3,
+      "themable_vars": [
+        "--gfx-dim",
+        "--gfx-edge",
+        "--gfx-radius",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-h"
+      ],
+      "call": "gfx.spotlightDim(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "preview_options": {
+        "rect": {
+          "x": 560,
+          "y": 360,
+          "w": 800,
+          "h": 220
+        }
+      },
+      "options": "at, duration (default: the element's data-start and data-duration); rect {x,y,w,h} sets the hole at entry; moves [{at,x,y,w,h,duration}] moves it to new targets"
+    },
+    {
+      "id": "cursor-click-ripple",
+      "category": "focus",
+      "files": [
+        "focus/cursor-click-ripple.html",
+        "focus/cursor.svg"
+      ],
+      "description": "Generic pointer cursor with a press and a double ripple at the click point.",
+      "when_to_use": "Make a real click in a screen recording visible, or show a click on a still frame or mockup. Put clickAt on the click's timestamp.",
+      "when_not_to_use": "Not on top of a recording where the real cursor is already visible at that point (place only the ripple there by hiding .gfx-cursor), and not on every click: only the ones that matter.",
+      "default_duration_s": 1.5,
+      "animation_in_s": 0.15,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-cursor-fill",
+        "--gfx-cursor-edge",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-cursor-w",
+        "--gfx-ripple"
+      ],
+      "call": "gfx.cursorClickRipple(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); clickAt (default at + 0.3)"
+    },
+    {
+      "id": "callout-box",
+      "category": "callouts",
+      "files": [
+        "callouts/callout-box.html"
+      ],
+      "description": "White card with an accent edge and a pointer tail, a bold title and one short sentence.",
+      "when_to_use": "Name a concept the screen does not explain (what a field means, why a step matters). Keep it to one idea and at most ~12 words while the voice talks.",
+      "when_not_to_use": "Not for text that repeats the voice word for word (redundancy), and not over the area the viewer must watch.",
+      "default_duration_s": 4.0,
+      "animation_in_s": 0.45,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-muted",
+        "--gfx-accent",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-title-size",
+        "--gfx-text-size"
+      ],
+      "call": "gfx.calloutBox(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); textAt (default at + 0.2)"
+    },
+    {
+      "id": "tooltip",
+      "category": "callouts",
+      "files": [
+        "callouts/tooltip.html"
+      ],
+      "description": "Small dark pill with a pointer, centered above a point (--gfx-x, --gfx-y is the tip).",
+      "when_to_use": "Label a UI element in two to five words (a short form, a shortcut, a caveat).",
+      "when_not_to_use": "Not for full sentences (use callout-box). Duration follows the text rule: max(1.5 s, words x 0.33 s + 0.5 s).",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.3,
+      "animation_out_s": 0.2,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-size"
+      ],
+      "call": "gfx.tooltip(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "lower-third",
+      "category": "text",
+      "files": [
+        "text/lower-third.html"
+      ],
+      "description": "Name and role plate with an accent bar, inside the title-safe area and above the player progress bar.",
+      "when_to_use": "Introduce a person, a product or a demo company the first time it appears.",
+      "when_not_to_use": "Not more than once per person per video, and not during the last 20 s (end-screen area).",
+      "default_duration_s": 5.0,
+      "animation_in_s": 0.6,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-muted",
+        "--gfx-accent",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-bottom",
+        "--gfx-name-size",
+        "--gfx-role-size"
+      ],
+      "call": "gfx.lowerThird(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "key-chips",
+      "category": "text",
+      "files": [
+        "text/key-chips.html"
+      ],
+      "description": "Keyboard-key chips (for example Ctrl + Shift + P) that pop in one by one and press down together.",
+      "when_to_use": "Show a shortcut the voice says or the recording performs. Anchor each key with keyTimes and the press with pressAt.",
+      "when_not_to_use": "Not for shortcuts that are not used in the video, and not on top of the area where the result of the shortcut appears.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.55,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-edge",
+        "--gfx-plus",
+        "--gfx-plus-bg",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-size"
+      ],
+      "call": "gfx.keyChips(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); keyTimes [one per key], pressAt"
+    },
+    {
+      "id": "chapter-card",
+      "category": "text",
+      "files": [
+        "text/chapter-card.html"
+      ],
+      "description": "Full-frame chapter card with number, accent rule, title and one subtitle line.",
+      "when_to_use": "Between steps or chapters of a tutorial (about 3 s). Use the same chapter titles as the YouTube description chapters.",
+      "when_not_to_use": "Not inside a step (cut straight instead), and not before the hook: the first 30 s show the result first.",
+      "default_duration_s": 3.0,
+      "animation_in_s": 0.8,
+      "animation_out_s": 0.3,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-muted",
+        "--gfx-accent",
+        "--gfx-font",
+        "--gfx-number-size",
+        "--gfx-title-size"
+      ],
+      "call": "gfx.chapterCard(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "step-counter",
+      "category": "progress",
+      "files": [
+        "progress/step-counter.html"
+      ],
+      "description": "Edge anchor pill showing \"Step N of M\" with dots; the current dot fills in.",
+      "when_to_use": "Keep the viewer oriented in a multi-step tutorial; show it at the start of each step, or keep it as the edge anchor during the step.",
+      "when_not_to_use": "Not with fewer than three steps, and not when the chapter card already says the same thing on the same frame.",
+      "default_duration_s": 4.0,
+      "animation_in_s": 0.4,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-accent",
+        "--gfx-off",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-size"
+      ],
+      "call": "gfx.stepCounter(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); fillAt (default at + 0.35)"
+    },
+    {
+      "id": "progress-bar",
+      "category": "progress",
+      "files": [
+        "progress/progress-bar.html"
+      ],
+      "description": "Labeled progress bar at the top of the frame that fills from one fraction to another.",
+      "when_to_use": "Show that a wait or a process is happening (an import, a deploy) after you cut the real wait out, or show progress through a list.",
+      "when_not_to_use": "Not at the bottom (it reads as the player's progress bar), and never to cover a wait you could have cut.",
+      "default_duration_s": 4.0,
+      "animation_in_s": 0.35,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-track",
+        "--gfx-accent",
+        "--gfx-ink",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w",
+        "--gfx-h",
+        "--gfx-size"
+      ],
+      "call": "gfx.progressBar(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); from, to (0-1), fillAt, fillFor, ease"
+    },
+    {
+      "id": "countdown",
+      "category": "progress",
+      "files": [
+        "progress/countdown.html"
+      ],
+      "description": "3-2-1 countdown with a ring that empties; digits swap on exact seconds.",
+      "when_to_use": "Before a challenge or a \"try it yourself\" moment, or before a reveal the voice sets up.",
+      "when_not_to_use": "Not as filler before content starts, and not in the first 30 s of a tutorial.",
+      "default_duration_s": 3.4,
+      "animation_in_s": 0.25,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-accent",
+        "--gfx-track",
+        "--gfx-font",
+        "--gfx-size"
+      ],
+      "call": "gfx.countdown(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); step (seconds per digit, default 1); add or remove .gfx-digit elements to change the count"
+    },
+    {
+      "id": "checkmark",
+      "category": "status",
+      "files": [
+        "status/checkmark.html",
+        "status/checkmark.svg"
+      ],
+      "description": "Green disc that pops in and draws a check mark.",
+      "when_to_use": "Confirm that something worked or matches (\"it balances\"), anchored to the word or the moment the app shows the result.",
+      "when_not_to_use": "Not when the app's own success state is clearly visible; one confirmation is enough.",
+      "default_duration_s": 2.0,
+      "animation_in_s": 0.55,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-mark",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.checkmark(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "cross",
+      "category": "status",
+      "files": [
+        "status/cross.html",
+        "status/cross.svg"
+      ],
+      "description": "Red disc that pops in and draws an X in two strokes.",
+      "when_to_use": "Mark a wrong option or a common mistake, usually paired with a checkmark on the right one.",
+      "when_not_to_use": "Not on the viewer's likely choice without explaining why; not as a reaction to someone's work.",
+      "default_duration_s": 2.0,
+      "animation_in_s": 0.6,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-accent",
+        "--gfx-mark",
+        "--gfx-x",
+        "--gfx-y",
+        "--gfx-w"
+      ],
+      "call": "gfx.cross(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "before-after-split",
+      "category": "layouts",
+      "files": [
+        "layouts/before-after-split.html"
+      ],
+      "description": "Side-by-side Before and After panels with labels and a divider. Replace the sample text in each .gfx-slot with an <img> (a PNG frame) or keep text.",
+      "when_to_use": "Compare two states (manual vs automated, old vs new UI). Anchor afterAt to the word that introduces the After side.",
+      "when_not_to_use": "Not with video in both slots playing at once (the viewer cannot watch two motions), and not for more than two states.",
+      "default_duration_s": 6.0,
+      "animation_in_s": 0.6,
+      "animation_out_s": 0.3,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-before",
+        "--gfx-after",
+        "--gfx-divider",
+        "--gfx-slot",
+        "--gfx-font",
+        "--gfx-label-size"
+      ],
+      "call": "gfx.beforeAfterSplit(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); afterAt (default at + 1.2)"
+    },
+    {
+      "id": "end-screen",
+      "category": "layouts",
+      "files": [
+        "layouts/end-screen.html"
+      ],
+      "description": "Background and heading for the last 5-20 s, with dashed zones where YouTube end-screen elements go: two 16:9 video zones (640x360) and one round subscribe zone, inside the title-safe area.",
+      "when_to_use": "The last 5-20 s of a video at least 25 s long. Add the real elements in YouTube Studio over the zones; YouTube allows up to four elements on 16:9 and publishes no pixel spec, so the zones are a layout guide. Hide the dashed zones with --gfx-zone: transparent if the elements cover them.",
+      "when_not_to_use": "Not with other graphics, lower thirds or subscribe prompts on top during those seconds: YouTube's elements need that area free.",
+      "default_duration_s": 20.0,
+      "animation_in_s": 1.0,
+      "animation_out_s": 0.5,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-paper-2",
+        "--gfx-ink",
+        "--gfx-muted",
+        "--gfx-accent",
+        "--gfx-zone",
+        "--gfx-font"
+      ],
+      "call": "gfx.endScreen(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "light-leak",
+      "category": "overlays",
+      "files": [
+        "overlays/light-leak.html"
+      ],
+      "description": "Warm light leak made of blurred radial gradients that drift and fade, blended with screen. Procedural CSS, no stock footage.",
+      "when_to_use": "Soften a transition between chapters in an explainer, or warm up an intro or outro.",
+      "when_not_to_use": "Not over screen recordings that the viewer must read, and not inside a tutorial step.",
+      "default_duration_s": 2.5,
+      "animation_in_s": 0.8,
+      "animation_out_s": 0.8,
+      "themable_vars": [
+        "--gfx-leak-1",
+        "--gfx-leak-2",
+        "--gfx-leak-3",
+        "--gfx-strength"
+      ],
+      "call": "gfx.lightLeak(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration)"
+    },
+    {
+      "id": "film-grain",
+      "category": "overlays",
+      "files": [
+        "overlays/film-grain.html"
+      ],
+      "description": "Animated monochrome grain from an SVG feTurbulence tile, stepped at a fixed rate (fps option, default 12). Strength with --gfx-grain.",
+      "when_to_use": "Give a stylized look to title cards, intros or illustrated scenes in an explainer.",
+      "when_not_to_use": "Not over screen recordings or small UI text: grain lowers legibility and inflates the encoded bitrate.",
+      "default_duration_s": 10.0,
+      "animation_in_s": 0.0,
+      "animation_out_s": 0.0,
+      "themable_vars": [
+        "--gfx-grain",
+        "--gfx-tile"
+      ],
+      "call": "gfx.filmGrain(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); fps (default 12)"
+    },
+    {
+      "id": "subscribe-prompt",
+      "category": "cta",
+      "files": [
+        "cta/subscribe-prompt.html"
+      ],
+      "description": "Generic, unbranded Like and Subscribe pill: the thumb taps, the button turns into \"Subscribed\". No platform logo or trade dress.",
+      "when_to_use": "Once, after the viewer got value (after the first result, around the middle). Anchor subscribeAt to the word.",
+      "when_not_to_use": "Not in the first 30 s, not in the last 20 s (end screen covers it), and never with a platform logo or the platform's red button style.",
+      "default_duration_s": 4.0,
+      "animation_in_s": 0.45,
+      "animation_out_s": 0.25,
+      "themable_vars": [
+        "--gfx-paper",
+        "--gfx-ink",
+        "--gfx-accent",
+        "--gfx-accent-ink",
+        "--gfx-done",
+        "--gfx-font",
+        "--gfx-x",
+        "--gfx-bottom",
+        "--gfx-size"
+      ],
+      "call": "gfx.subscribePrompt(tl, el, opts)",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "source": "Original work for this repository (agent-video-editor), hand-written SVG/HTML/CSS/GSAP.",
+      "options": "at, duration (default: the element's data-start and data-duration); likeAt, subscribeAt"
+    }
+  ]
+}

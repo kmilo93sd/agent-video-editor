@@ -1,0 +1,78 @@
+<!-- gfx:chapter-card | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-chapter-card {
+    --gfx-paper: #0f1720;
+    --gfx-ink: #ffffff;
+    --gfx-muted: #9fb0c3;
+    --gfx-accent: #ffc531;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-number-size: 120px;
+    --gfx-title-size: 96px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-chapter-card .gfx-body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 192px;
+    background: var(--gfx-paper);
+  }
+  .gfx-chapter-card .gfx-number {
+    margin: 0;
+    color: var(--gfx-accent);
+    font-size: var(--gfx-number-size);
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .gfx-chapter-card .gfx-rule {
+    width: 260px;
+    height: 10px;
+    margin: 34px 0 30px;
+    background: var(--gfx-accent);
+    border-radius: 5px;
+    transform-origin: 0 50%;
+  }
+  .gfx-chapter-card .gfx-title {
+    margin: 0;
+    max-width: 1400px;
+    color: var(--gfx-ink);
+    font-size: var(--gfx-title-size);
+    font-weight: 800;
+    line-height: 1.05;
+  }
+  .gfx-chapter-card .gfx-sub {
+    margin: 22px 0 0;
+    color: var(--gfx-muted);
+    font-size: 44px;
+    line-height: 1.2;
+  }
+</style>
+<div class="clip gfx-chapter-card" id="gfx-chapter-card-1" data-start="0" data-duration="3" data-track-index="4">
+  <div class="gfx-body">
+    <p class="gfx-number">02</p>
+    <div class="gfx-rule"></div>
+    <p class="gfx-title">Connect your bank</p>
+    <p class="gfx-sub">Upload the statement and match it</p>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.chapterCard = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-number"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, at + 0.1);
+    tl.fromTo(el.querySelector(".gfx-rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, at + 0.2);
+    tl.fromTo(el.querySelector(".gfx-title"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, at + 0.3);
+    tl.fromTo(el.querySelector(".gfx-sub"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, at + 0.5);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power1.in", immediateRender: false }, at + dur - 0.3);
+    return tl;
+  };
+</script>

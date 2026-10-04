@@ -1,0 +1,72 @@
+<!-- gfx:progress-bar | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-progress-bar {
+    --gfx-paper: rgba(17, 20, 24, 0.85);
+    --gfx-track: rgba(255, 255, 255, 0.22);
+    --gfx-accent: #ffc531;
+    --gfx-ink: #ffffff;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-x: 96px;
+    --gfx-y: 72px;
+    --gfx-w: 1728px;
+    --gfx-h: 14px;
+    --gfx-size: 32px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-progress-bar .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+    padding: 18px 24px 22px;
+    background: var(--gfx-paper);
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+  .gfx-progress-bar .gfx-label {
+    margin: 0 0 12px;
+    color: var(--gfx-ink);
+    font-size: var(--gfx-size);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .gfx-progress-bar .gfx-track {
+    position: relative;
+    height: var(--gfx-h);
+    background: var(--gfx-track);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .gfx-progress-bar .gfx-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--gfx-accent);
+    border-radius: 999px;
+    transform-origin: 0 50%;
+  }
+</style>
+<div class="clip gfx-progress-bar" id="gfx-progress-bar-1" data-start="0" data-duration="4" data-track-index="5">
+  <div class="gfx-body">
+    <p class="gfx-label">Importing 1,240 rows</p>
+    <div class="gfx-track"><div class="gfx-fill"></div></div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.progressBar = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const from = o.from ?? 0;
+    const to = o.to ?? 1;
+    const fillAt = o.fillAt ?? at + 0.3;
+    const fillFor = o.fillFor ?? Math.max(0.5, dur - 1.1);
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-fill"), { scaleX: from }, { scaleX: to, duration: fillFor, ease: o.ease ?? "power1.inOut" }, fillAt);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

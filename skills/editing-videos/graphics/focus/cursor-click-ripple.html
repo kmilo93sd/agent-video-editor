@@ -1,0 +1,79 @@
+<!-- gfx:cursor-click-ripple | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-cursor-click-ripple {
+    --gfx-accent: #ffc531;
+    --gfx-cursor-fill: #ffffff;
+    --gfx-cursor-edge: #111418;
+    --gfx-x: 960px;
+    --gfx-y: 540px;
+    --gfx-cursor-w: 60px;
+    --gfx-ripple: 170px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gfx-cursor-click-ripple .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: 0;
+    height: 0;
+  }
+  .gfx-cursor-click-ripple .gfx-ripple {
+    position: absolute;
+    left: calc(var(--gfx-ripple) / -2);
+    top: calc(var(--gfx-ripple) / -2);
+    width: var(--gfx-ripple);
+    height: var(--gfx-ripple);
+    border-radius: 50%;
+    border: 7px solid var(--gfx-accent);
+    opacity: 0;
+  }
+  .gfx-cursor-click-ripple .gfx-cursor {
+    position: absolute;
+    left: calc(var(--gfx-cursor-w) * -0.125);
+    top: calc(var(--gfx-cursor-w) * -0.0625);
+    width: var(--gfx-cursor-w);
+    transform-origin: 12.5% 4.35%;
+  }
+  .gfx-cursor-click-ripple .gfx-cursor svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
+  }
+  .gfx-cursor-click-ripple .gfx-cursor path {
+    fill: var(--gfx-cursor-fill);
+    stroke: var(--gfx-cursor-edge);
+    stroke-width: 2.4;
+    stroke-linejoin: round;
+  }
+</style>
+<div class="clip gfx-cursor-click-ripple" id="gfx-cursor-click-ripple-1" data-start="0" data-duration="1.5" data-track-index="3">
+  <div class="gfx-body">
+    <div class="gfx-ripple gfx-r1"></div>
+    <div class="gfx-ripple gfx-r2"></div>
+    <div class="gfx-cursor">
+      <svg viewBox="0 0 32 46" aria-hidden="true">
+        <path d="M4 2 L4 36 L12 28 L18 42 L24 39 L18 26 L29 26 Z" />
+      </svg>
+    </div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.cursorClickRipple = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const click = o.clickAt ?? at + 0.3;
+    const body = el.querySelector(".gfx-body");
+    const cursor = el.querySelector(".gfx-cursor");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.15 }, at);
+    tl.fromTo(cursor, { scale: 1 }, { scale: 0.86, duration: 0.08, ease: "power2.in" }, click - 0.08);
+    tl.fromTo(cursor, { scale: 0.86 }, { scale: 1, duration: 0.15, ease: "power2.out", immediateRender: false }, click);
+    tl.fromTo(el.querySelector(".gfx-r1"), { scale: 0.2, opacity: 1 }, { scale: 1, opacity: 0, duration: 0.55, ease: "power2.out" }, click);
+    tl.fromTo(el.querySelector(".gfx-r2"), { scale: 0.2, opacity: 0.8 }, { scale: 1.4, opacity: 0, duration: 0.7, ease: "power2.out" }, click + 0.08);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

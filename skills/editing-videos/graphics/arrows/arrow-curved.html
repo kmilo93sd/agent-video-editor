@@ -1,0 +1,59 @@
+<!-- gfx:arrow-curved | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-arrow-curved {
+    --gfx-accent: #ffc531;
+    --gfx-stroke: 12;
+    --gfx-x: 700px;
+    --gfx-y: 380px;
+    --gfx-w: 420px;
+    --gfx-angle: 0deg;
+    --gfx-flip: 1;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gfx-arrow-curved .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+  }
+  .gfx-arrow-curved svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    transform: rotate(var(--gfx-angle)) scaleX(var(--gfx-flip));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  }
+  .gfx-arrow-curved path {
+    fill: none;
+    stroke: var(--gfx-accent);
+    stroke-width: var(--gfx-stroke);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+</style>
+<div class="clip gfx-arrow-curved" id="gfx-arrow-curved-1" data-start="0" data-duration="2.5" data-track-index="3">
+  <div class="gfx-body">
+    <svg viewBox="0 0 400 240" aria-hidden="true">
+      <path class="gfx-shaft" pathLength="100" d="M30 210 C80 60 260 30 360 110" />
+      <path class="gfx-head" pathLength="100" d="M345 73 L360 110 L321 104" />
+    </svg>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.arrowCurved = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.1 }, at);
+    tl.fromTo(el.querySelector(".gfx-shaft"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, at);
+    tl.fromTo(el.querySelector(".gfx-head"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.18, ease: "power2.out" }, at + 0.4);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

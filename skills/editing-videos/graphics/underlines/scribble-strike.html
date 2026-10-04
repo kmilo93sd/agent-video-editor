@@ -1,0 +1,53 @@
+<!-- gfx:scribble-strike | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-scribble-strike {
+    --gfx-accent: #ff5a4e;
+    --gfx-stroke: 7;
+    --gfx-x: 640px;
+    --gfx-y: 500px;
+    --gfx-w: 520px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gfx-scribble-strike .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+  }
+  .gfx-scribble-strike svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .gfx-scribble-strike path {
+    fill: none;
+    stroke: var(--gfx-accent);
+    stroke-width: var(--gfx-stroke);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+</style>
+<div class="clip gfx-scribble-strike" id="gfx-scribble-strike-1" data-start="0" data-duration="2" data-track-index="3">
+  <div class="gfx-body">
+    <svg viewBox="0 0 500 80" aria-hidden="true">
+      <path class="gfx-line" pathLength="100" d="M10 46 L70 30 L58 54 L140 26 L126 56 L214 28 L198 54 L290 26 L276 54 L366 28 L352 52 L440 30 L428 50 L492 38" />
+    </svg>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.scribbleStrike = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.05 }, at);
+    tl.fromTo(el.querySelector(".gfx-line"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.5, ease: "none" }, at);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

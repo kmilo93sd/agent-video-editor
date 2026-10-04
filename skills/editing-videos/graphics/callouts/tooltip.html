@@ -1,0 +1,59 @@
+<!-- gfx:tooltip | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-tooltip {
+    --gfx-paper: #111418;
+    --gfx-ink: #ffffff;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-x: 960px;
+    --gfx-y: 480px;
+    --gfx-size: 36px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-tooltip .gfx-anchor {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    transform: translate(-50%, -100%);
+  }
+  .gfx-tooltip .gfx-body {
+    position: relative;
+    padding: 16px 26px;
+    margin-bottom: 18px;
+    background: var(--gfx-paper);
+    color: var(--gfx-ink);
+    font-size: var(--gfx-size);
+    font-weight: 600;
+    line-height: 1.15;
+    white-space: nowrap;
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  }
+  .gfx-tooltip .gfx-body::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -26px;
+    margin-left: -13px;
+    border: 13px solid transparent;
+    border-top: 13px solid var(--gfx-paper);
+  }
+</style>
+<div class="clip gfx-tooltip" id="gfx-tooltip-1" data-start="0" data-duration="2.5" data-track-index="6">
+  <div class="gfx-anchor">
+    <div class="gfx-body">Only admins see this</div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.tooltip = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, at);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power1.in", immediateRender: false }, at + dur - 0.2);
+    return tl;
+  };
+</script>

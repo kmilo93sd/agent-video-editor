@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="t d">
+  <title id="t">The editing rules, on the timeline</title>
+  <desc id="d">J-cut, a fade only when changing blocks, a graphic anchored to its word, at least 0.4 s between phrases, zoom of up to 1.10 and music 18 to 25 dB under the voice.</desc>
+  <defs>
+    <linearGradient id="voice" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F5B83D"/>
+      <stop offset="1" stop-color="#F28C38"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5B8DEF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#5B8DEF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="520" rx="18" fill="#0D0F14"/>
+
+  <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="56" y="62" fill="#FFFFFF" font-size="26" font-weight="700">The rules, on the timeline</text>
+    <text x="56" y="92" fill="#8A91A0" font-size="16">The skill’s hard rules. The edit generator checks the ones that can be measured.</text>
+  </g>
+
+  <g transform="translate(56 128)" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="12" fill="#6B7280">
+    <rect x="0" y="0" width="1168" height="200" rx="12" fill="#0A0C10" stroke="#262B36"/>
+
+    <text x="18" y="46">VOICE</text>
+    <rect x="110" y="30" width="250" height="24" rx="5" fill="url(#voice)"/>
+    <rect x="378" y="30" width="270" height="24" rx="5" fill="url(#voice)"/>
+    <rect x="666" y="30" width="300" height="24" rx="5" fill="url(#voice)"/>
+    <rect x="984" y="30" width="166" height="24" rx="5" fill="url(#voice)"/>
+
+    <text x="18" y="90">SCREEN</text>
+    <rect x="110" y="74" width="300" height="24" rx="5" fill="#5B8DEF"/>
+    <rect x="410" y="74" width="30" height="24" fill="url(#fade)"/>
+    <rect x="440" y="74" width="226" height="24" rx="5" fill="#5B8DEF"/>
+    <rect x="666" y="74" width="484" height="24" rx="5" fill="#5B8DEF"/>
+    <rect x="860" y="74" width="140" height="24" rx="5" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-dasharray="4 3"/>
+
+    <text x="18" y="134">GRAPHIC</text>
+    <rect x="690" y="118" width="250" height="24" rx="5" fill="#3FBF8F"/>
+
+    <text x="18" y="178">MUSIC</text>
+    <path d="M110 172 Q 170 164 230 172 T 350 172 T 470 172 T 590 172 T 710 172 T 830 172 T 950 172 T 1070 172 L1150 172" fill="none" stroke="#8B7CF6" stroke-width="2.5" stroke-opacity="0.8"/>
+
+    <g stroke-width="1.5" fill="none">
+      <path d="M378 22 v-10 M440 22 v-10 M378 17 H440" stroke="#F5B83D"/>
+      <path d="M360 62 v8 M378 62 v8 M360 66 H378" stroke="#E5E7EB"/>
+      <path d="M410 106 v8 M440 106 v8 M410 110 H440" stroke="#5B8DEF"/>
+      <path d="M666 62 L690 116" stroke="#3FBF8F" stroke-dasharray="3 3"/>
+    </g>
+  </g>
+
+  <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15">
+    <g transform="translate(56 362)">
+      <circle cx="8" cy="-5" r="6" fill="#F5B83D"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">J-cut</text>
+      <text x="24" y="22" fill="#8A91A0">The voice anticipates the next shot.</text>
+    </g>
+    <g transform="translate(456 362)">
+      <circle cx="8" cy="-5" r="6" fill="#5B8DEF"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">Fade between blocks</text>
+      <text x="24" y="22" fill="#8A91A0">Only when changing blocks. Inside, a hard cut.</text>
+    </g>
+    <g transform="translate(856 362)">
+      <circle cx="8" cy="-5" r="6" fill="#3FBF8F"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">Anchored graphic</text>
+      <text x="24" y="22" fill="#8A91A0">Each element ≤ 0.6 s from its word.</text>
+    </g>
+    <g transform="translate(56 432)">
+      <circle cx="8" cy="-5" r="6" fill="#E5E7EB"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">Continuous voice</text>
+      <text x="24" y="22" fill="#8A91A0">≥ 0.4 s between phrases; 6 s cap without voice.</text>
+    </g>
+    <g transform="translate(456 432)">
+      <rect x="2" y="-11" width="12" height="12" rx="2" fill="none" stroke="#FFFFFF" stroke-dasharray="3 2"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">Zoom with a reason</text>
+      <text x="24" y="22" fill="#8A91A0">Up to 1.10 and ≥ 1.5 s to zoom in.</text>
+    </g>
+    <g transform="translate(856 432)">
+      <circle cx="8" cy="-5" r="6" fill="#8B7CF6"/>
+      <text x="24" y="0" fill="#FFFFFF" font-weight="700">Music under the voice</text>
+      <text x="24" y="22" fill="#8A91A0">18 to 25 dB below. Master at -14 LUFS.</text>
+    </g>
+  </g>
+</svg>

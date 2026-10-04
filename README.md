@@ -1,164 +1,255 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="agent-video-editor: el criterio de un editor de YouTube, para cualquier agente de IA" width="100%">
+  <img src="assets/banner.svg" alt="agent-video-editor: a YouTube editor's judgment, for any AI agent" width="100%">
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/c%C3%B3digo-MIT-2ea44f"></a>
-  <a href="skills/edicion-de-video/biblioteca/LICENCIAS.md"><img alt="Audio CC0" src="https://img.shields.io/badge/audio-CC0%201.0-5b8def"></a>
-  <a href="https://agentskills.io/specification"><img alt="Formato Agent Skills" src="https://img.shields.io/badge/formato-Agent%20Skills-f5b83d"></a>
-  <a href="https://github.com/heygen-com/hyperframes"><img alt="Integra HyperFrames" src="https://img.shields.io/badge/integra-HyperFrames-8b7cf6"></a>
-  <img alt="Idioma español" src="https://img.shields.io/badge/idioma-espa%C3%B1ol-lightgrey">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/code-MIT-2ea44f"></a>
+  <a href="skills/editing-videos/library/LICENSES.md"><img alt="CC0 audio" src="https://img.shields.io/badge/audio-CC0%201.0-5b8def"></a>
+  <a href="skills/editing-videos/graphics/LICENSES.md"><img alt="CC0 graphics" src="https://img.shields.io/badge/graphics-CC0%201.0-5b8def"></a>
+  <a href="https://agentskills.io/specification"><img alt="Agent Skills format" src="https://img.shields.io/badge/format-Agent%20Skills-f5b83d"></a>
+  <a href="https://github.com/heygen-com/hyperframes"><img alt="Integrates HyperFrames" src="https://img.shields.io/badge/integrates-HyperFrames-8b7cf6"></a>
+  <img alt="Language: English" src="https://img.shields.io/badge/language-English-lightgrey">
 </p>
 
 <p align="center">
-  <a href="#instalar">Instalar</a> ·
-  <a href="#qué-hace">Qué hace</a> ·
-  <a href="#las-reglas">Las reglas</a> ·
-  <a href="#biblioteca-de-audio">Biblioteca de audio</a> ·
-  <a href="#estructura">Estructura</a> ·
-  <a href="#contribuir">Contribuir</a>
+  <a href="#install">Install</a> ·
+  <a href="#what-it-does">What it does</a> ·
+  <a href="#the-rules">The rules</a> ·
+  <a href="#audio-library">Audio library</a> ·
+  <a href="#graphics-kit-and-meme-reference">Graphics and memes</a> ·
+  <a href="#structure">Structure</a> ·
+  <a href="#contributing">Contributing</a>
 </p>
 
 ---
 
-Un agente de IA ya puede grabar la pantalla, generar una voz y armar un video. Lo que le falta es criterio de
-editor: cuándo cortar, cuánto silencio aguanta una frase, cuándo un gráfico ayuda y cuándo estorba, a qué
-volumen va la música. Sin eso, el video sale con la pantalla saltando, modales que se abren y cierran solos,
-gráficos que quedan vacíos cinco segundos y siglas mal leídas.
+An AI agent can already cut footage, run ffmpeg, generate a voice and assemble a timeline. What it lacks is
+an editor's judgment: when to cut, how much silence a phrase can take, when a graphic helps and when it gets
+in the way, how loud the music should be. Without that, a vlog drags through every shot that was filmed, a
+talking head keeps every "um", a Short spends its first three seconds on a logo, and a tutorial's graphics sit
+empty while the voice talks about something else.
 
-**agent-video-editor** es una skill que le da ese criterio, con números y fuentes, y plantillas que **fallan si
-el montaje rompe una regla**. Nació armando tutoriales de software narrados, pero el criterio sirve para
-cualquier video explicativo, Short o Reel.
+**agent-video-editor** is a skill that gives it that judgment, with numbers and sources: pacing per video
+type, hooks, J and L cuts, captions, audio levels, color, thumbnails and licensing. It adds a recipe per type
+of video (talking head, vlog, podcast, Shorts from long form, narrated screen tutorial), a CC0 library of
+sounds and music, a CC0 kit of animated graphics, a meme reference with its Content ID risk, and tested
+templates that **fail if the edit breaks a rule**.
 
-Funciona con cualquier agente que lea skills en formato [`SKILL.md`](https://agentskills.io/specification):
-Claude Code, Codex, Cursor, Gemini CLI y otros.
+It works with any agent that reads skills in the [`SKILL.md`](https://agentskills.io/specification) format
+(Claude Code, Codex, Cursor, Gemini CLI and others) and with any editor: Premiere Pro, DaVinci Resolve, Final
+Cut Pro, CapCut, ffmpeg, Remotion or HyperFrames.
 
-## Instalar
+## Install
 
-**Con [`skills`](https://github.com/vercel-labs/skills)**, para cualquier agente compatible:
+**With [`skills`](https://github.com/vercel-labs/skills)**, for any compatible agent:
 
 ```bash
 npx skills add kmilo93sd/agent-video-editor
 ```
 
-**Como plugin de Claude Code:**
+**As a Claude Code plugin:**
 
 ```text
 /plugin marketplace add kmilo93sd/agent-video-editor
 /plugin install agent-video-editor@agent-video-editor
 ```
 
-**A mano:** copia `skills/edicion-de-video/` en la carpeta de skills de tu agente (en Claude Code,
+**By hand:** copy `skills/editing-videos/` into your agent's skills folder (in Claude Code,
 `~/.claude/skills/`).
 
-Después pídele al agente cosas como:
+Then ask the agent things like:
 
-> Revisa el ritmo de este tutorial: entre frase y frase quedan silencios largos mientras se llena el formulario.
+> Here is the footage from my weekend trip to Lisbon. Find the story, give me a cold open and an edit list
+> for a 10-minute vlog.
 
-> Busca un whoosh suave y una cama de música tranquila para la intro, y dime a qué volumen van bajo la voz.
+> Tighten this talking-head take: remove the filler, soften the jump cuts and tell me where a punch-in helps.
 
-> La voz lee «ACHS» como una palabra. Arréglalo y verifica que ahora se diga bien.
+> Cut three Shorts from this podcast episode, with captions that fit 9:16 and a hook in the first second.
 
-## Qué hace
+> Check the pacing of this software tutorial, then find a soft whoosh and a calm music bed and tell me how
+> loud they go under the voice.
 
-| | |
+## What it does
+
+The skill has two layers and three asset kits. The **core** is editing craft that holds for any video and
+any tool; the **recipes** add what changes for one type of video, and the agent loads only the one it needs.
+The **sound library**, the **graphics kit** and the **meme reference** are searched from the command line and
+copied into the project.
+
+| Core | |
 |---|---|
-| **Proceso de punta a punta** | Brief, guion, grabación, voz, montaje, revisión, render y publicación, con qué archivo leer en cada paso. |
-| **Ritmo con fuentes** | Cada cuánto cambiar la pantalla, plano mínimo, silencios y transiciones, por tipo de video. Cada número dice de dónde sale: documentación oficial, estudio, creador o experiencia propia. |
-| **Voz que suena bien** | Guion sin frases hechas, siglas escritas como se pronuncian, una pasada por capítulo con alineación y verificación con whisper. |
-| **Gráficos que no estorban** | Anclados a la palabra que los nombra, nunca vacíos, con tiempo de lectura calculado. |
-| **Audio con niveles** | Voz, música, ducking y efectos en dB y LUFS, y master para YouTube. |
-| **Publicación** | Miniatura, título, descripción y capítulos según la especificación de YouTube. |
-| **Revisión antes de mostrar** | Una checklist que mezcla comprobaciones automáticas y lo que solo se ve a ojo o se oye con audífonos. |
+| **Pacing with sources** | What a cut is for, shot length, J and L cuts, jump cuts, b-roll and transitions, with a pacing table for talking heads, vlogs, explainers, screen tutorials, podcasts and Shorts. Every number says where it comes from: official documentation, study, creator practice or our own experience. |
+| **Hook and retention** | The first 30 s as YouTube measures them, a hook per video type, chapters, end screens. |
+| **Graphics, text and captions** | Graphics anchored to the word that names them and never empty, reading time for text, caption timing and layout, zoom and punch-in, safe zones. |
+| **Audio with levels** | Dialogue cleanup, room tone, music under the voice and ducking, sound effects, and masters for YouTube and podcast feeds, in LUFS and dB. |
+| **Basic color** | Exposure, white balance and matching shots, LUTs as a starting point, SDR and HDR delivery. |
+| **Publishing and licensing** | Thumbnail, title, description and chapters to YouTube's specification; which music, sound effects and footage are safe for a monetized channel. |
+| **Any tool** | How to apply it in Premiere Pro, DaVinci Resolve, Final Cut Pro or CapCut (edit decision lists, markers, caption files, instructions with numbers), in ffmpeg, in Remotion or in HyperFrames. |
+| **Review before showing** | A checklist of what is measured, what is seen and what is heard before a cut is shown. |
 
-## Las reglas
+| Recipes | |
+|---|---|
+| **Talking head** | Removing filler, softening jump cuts, punch-ins, b-roll on what is said. |
+| **Vlog** | Finding the story in the footage, cold open, wind and location audio, matching cameras. |
+| **Podcast to YouTube** | Multicam sync, cutting between angles, open mics, a separate podcast master, chapters per topic. |
+| **Shorts from long form** | Picking the moment, reframing to 9:16, burned-in captions, loops. |
+| **Narrated screen tutorial** | The pipeline the skill was born from: Playwright recording, a synthetic ElevenLabs voice and a HyperFrames edit generator that **fails if the edit breaks a rule**, with tested templates. |
+
+| Assets | |
+|---|---|
+| **Sound library** | 128 CC0 sounds and music tracks, measured in LUFS, with a search tool that computes how loud each one goes under your voice. |
+| **Graphics kit** | 26 CC0 animated graphics for HyperFrames: arrows, highlights, callouts, lower third, progress, chapter cards, end screen and more. |
+| **Meme reference** | 59 memes and meme formats: what they mean, when they fit, how to recreate them without the original, and their Content ID risk. No media. |
+
+## The rules
 
 <p align="center">
-  <img src="assets/reglas.svg" alt="Las reglas de montaje sobre una línea de tiempo: corte J, fundido, gráfico anclado, voz de corrido, zoom y música bajo la voz" width="100%">
+  <img src="assets/rules.svg" alt="The editing rules on a timeline: J-cut, fade, anchored graphic, continuous voice, zoom and music under the voice" width="100%">
 </p>
 
-Son las reglas duras de la skill. El generador de montaje de `plantillas/` **se cae** si el clip retrocede,
-si vuelve a un clip ya dejado, si una frase cae en un segundo que ya pasó o si quedan más de 6 s sin voz:
+The core's hard rules, for any video:
 
-1. **La pantalla manda y la voz se acomoda.** El clip nunca retrocede ni repite un segundo; si la frase dura
-   más que la acción, se congela el resultado.
-2. **Velocidad honesta.** 1× en navegación, clics y resultados; tipeo como máximo a 1,5×. Lo que sobra se corta.
-3. **Planos de 5 s o más**, y nunca un corte en mitad de una animación de la app.
-4. **Un gráfico nunca está vacío.** Entra 0,5 s antes de su palabra como máximo, tiene contenido antes del
-   primer segundo y cada elemento aparece a 0,6 s o menos de cuando la voz lo nombra.
-5. **Zoom solo al dato que nombra la voz.** Hasta 1,10, con 1,5 s o más para entrar y uno cada dos frases.
-6. **Siglas y números como se dicen**, verificados con whisper.
-7. **Sin frases hechas**, y siempre con datos ficticios.
-8. **Solo audio con licencia clara** (CC0, la Audio Library de YouTube o licencia escrita de uso comercial).
+1. **Every cut has a reason**: it removes dead time, changes the information or follows an action.
+2. **Deliver the promise early**: what the title and thumbnail promise shows up in the first seconds.
+3. **The voice never fights anything**: music 18–25 dB under it and ducked, room tone under every gap.
+4. **Master once, to the destination**: -14 LUFS and -1 dBTP for YouTube, -16 LKFS for a podcast feed.
+5. **A graphic is never empty.** It enters at most 0.5 s before its word, has content within the first
+   second, and each element appears 0.6 s or less from when the voice names it.
+6. **Text stays long enough to read**, and captions follow subtitle timing (42 characters per line, 2
+   lines, 20 frames minimum).
+7. **Zoom and punch-in only when motivated**, and never across a cut.
+8. **Shots match** in exposure, white balance and level.
+9. **Only media with a clear license** (CC0, the YouTube Audio Library, or a written commercial-use
+   license).
+10. **No invented numbers**, and nothing rendered or published without approval.
 
-## Biblioteca de audio
+Each recipe adds its own. The narrated screen tutorial, for example, adds that the screen leads and the
+voice adapts, that speed is 1× except typing at 1.5× at most, shots of 5 s or more, zooms of up to 1.10, and
+fake demo data only; its generator fails if the clip goes back, returns to a clip it already left, or leaves
+more than 6 s without voice.
 
-30 archivos **CC0 1.0**, sin atribución obligatoria y aptos para videos monetizados. Cada uno trae su duración,
-su sonoridad en LUFS y para qué sirve.
+## Audio library
 
-| Categoría | Archivos | Ejemplos |
+128 **CC0 1.0** files, with no attribution required and fit for monetized videos: 113 sound effects (mono WAV,
+48 kHz, -22 LUFS) and 15 music tracks (stereo MP3, 48 kHz, -16 LUFS). Each one comes with its duration, its
+loudness and true peak, and what it is for.
+
+| Category | Files | Examples |
 |---|---:|---|
-| Transición | 6 | whoosh suave, barrido largo, deslizar |
-| Clic | 4 | clic de mouse, tap, toggle |
-| Aparición | 4 | aparece, desaparece, pop |
-| Notificación | 3 | notificación, pregunta |
-| Tipeo | 3 | tecla, tipeo de 3 s, scroll |
-| Impacto | 3 | golpe seco, impacto suave |
-| Éxito y error | 4 | éxito, error |
-| Música | 3 | ambiente, lofi, loop calmo |
+| Transition | 18 | soft whoosh, page turn, risers, reverse cymbal, downlifter, glitch |
+| Click | 12 | mouse click, tap, toggle, hover, select |
+| Appear | 12 | pop, modal open and close, panel expand, drag and drop |
+| Notification | 11 | notification, question, bell, alert, beeps, countdown |
+| Success | 7 | success, chime, check mark |
+| Error | 5 | soft errors, buzz |
+| Typing | 9 | key press, keyboard typing (1 to 6 s), scroll |
+| Impact | 5 | soft impact, dry thud, light wood |
+| Stinger | 14 | win jingles, fanfare, intro and outro, serious, energetic |
+| Office | 17 | coins, cash register, paper, pencil, book, stamp, calculator, clock |
+| Ambience | 3 | room tone, office air conditioning, busy office (loops) |
+| Music | 15 | ambient and emotional piano, lofi, acoustic, funky house, orchestral, tension |
 
 ```bash
-node skills/edicion-de-video/biblioteca/buscar.mjs whoosh
-node skills/edicion-de-video/biblioteca/buscar.mjs --categoria musica --rutas
+node skills/editing-videos/library/search.mjs whoosh
+node skills/editing-videos/library/search.mjs --category music --paths
+node skills/editing-videos/library/search.mjs pop --voice -17
 ```
 
-El origen de cada archivo (Kenney, OpenGameArt o generado aquí), con su página y el texto de la licencia, está
-en [`LICENCIAS.md`](skills/edicion-de-video/biblioteca/LICENCIAS.md).
+With `--voice`, the tool prints each sound's volume for a voice at that level: effects 15 dB under it, music
+20 dB and ambience 30 dB. The origin of each file (Kenney, OpenGameArt or generated here, with the script that
+makes them), with its page and the license text, is in
+[`LICENSES.md`](skills/editing-videos/library/LICENSES.md).
 
-## Estructura
+## Graphics kit and meme reference
+
+**Graphics kit.** 26 CC0 graphics for HyperFrames: arrows, hand-drawn circles and highlight rings, underlines
+and scribbles, a spotlight, a cursor click ripple, callouts and tooltips, a lower third, keyboard-key chips, a
+step counter, a progress bar, a countdown, a checkmark and a cross, a before/after split, chapter cards, an
+end-screen layout, light-leak and grain overlays, and a generic like-and-subscribe prompt. Each one is an HTML
+snippet with its timing, colors in CSS custom properties and a function that adds seekable tweens to the
+composition's timeline. Open [`preview.html`](skills/editing-videos/graphics/preview.html) to see them all
+animate.
+
+```bash
+node skills/editing-videos/graphics/search.mjs --category arrows
+node skills/editing-videos/graphics/search.mjs chapter --paths
+```
+
+**Meme reference.** 59 memes and meme formats that work in tutorials and explainers, with what each one means,
+when it fits, how long it stays on screen, how to recreate it with the graphics kit, who owns the original
+and how likely it is to trigger Content ID. It ships no meme media on purpose: recreate the joke or license
+the original. See [`memes/README.md`](skills/editing-videos/memes/README.md).
+
+```bash
+node skills/editing-videos/memes/search.mjs fail --risk low
+```
+
+## Structure
 
 ```text
-skills/edicion-de-video/
-├── SKILL.md                    punto de entrada: proceso, reglas duras e índice
-├── checklist-de-revision.md    lo que se revisa antes de mostrar un corte
-├── referencias/                ritmo, gancho, voz, gráficos, audio, miniatura, tutoriales,
-│                               licencias e integración con HyperFrames
-├── plantillas/                 grabar, voz, verificación, ilustraciones, montaje y hoja de contacto
-├── biblioteca/                 sonidos CC0, catálogo y buscador
-└── evals/                      casos con lo que el agente debería responder
+skills/editing-videos/
+├── SKILL.md                    entry point: process, core rules, pick your recipe, index
+├── review-checklist.md         the universal review before showing a cut
+├── references/                 the core: pacing and cuts, hook and retention, graphics and captions,
+│                               audio, color, thumbnail and title, licenses, tools
+├── recipes/                    one file per video type, loaded only when needed
+│   ├── talking-head.md
+│   ├── vlog.md
+│   ├── podcast-to-youtube.md
+│   ├── shorts-from-long-form.md
+│   ├── narrated-screen-tutorial.md
+│   └── narrated-screen-tutorial/
+│       ├── voice.md            synthetic voice and script
+│       ├── hyperframes-generator.md
+│       └── templates/          recording, voice, verification, illustrations, edit and contact sheet
+├── library/                    CC0 sounds and music: catalog, search, verify, licenses
+│   ├── sfx/
+│   ├── music/
+│   └── tools/synthesize.py     reproduces the sounds generated for the library
+├── graphics/                   CC0 HyperFrames graphics: catalog, search, preview, check, licenses
+├── memes/                      meme reference (no media): catalog, search, README
+└── evals/                      cases with what the agent should answer
 ```
 
-La skill sigue la [especificación de Agent Skills](https://agentskills.io/specification) y las
-[buenas prácticas de Anthropic](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices):
-la descripción dice qué hace y cuándo usarla, SKILL.md queda bajo 500 líneas, el detalle se carga solo cuando
-hace falta, las referencias están a un nivel de profundidad y los archivos largos llevan índice.
+The skill follows the [Agent Skills specification](https://agentskills.io/specification) and
+[Anthropic's best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices):
+the description says what it does and when to use it, SKILL.md stays under 500 lines, detail is loaded only
+when needed, references are one level deep, and long files have a table of contents.
 
-### Requisitos de las plantillas
+### Template requirements
 
-- Node 20 o superior y `ffmpeg` en el PATH.
-- Voz: una clave de ElevenLabs y el `voice_id` en un `.env`, que se pasa con `--env`. Las plantillas no buscan
-  claves hacia arriba ni las copian.
-- Grabación: Playwright. Montaje y render: [HyperFrames](https://github.com/heygen-com/hyperframes) y sus skills.
+The core and the general recipes need nothing: they work for planning, editing or reviewing a video made
+with any tool. Only the narrated screen tutorial templates need:
 
-El criterio editorial no necesita nada de esto: sirve para revisar o planificar un video hecho con cualquier
-herramienta.
+- Node 20 or later and `ffmpeg` on the PATH.
+- Voice: an ElevenLabs key and the `voice_id` in a `.env`, passed with `--env`. The templates do not search
+  upwards for keys or copy them.
+- Recording: Playwright. Editing and rendering: [HyperFrames](https://github.com/heygen-com/hyperframes) and
+  its skills.
 
-## Idioma
+The search tools of the sound library, the graphics kit and the meme reference need Node. Rebuilding the
+library's synthesized sounds with `library/tools/synthesize.py` needs Python with numpy, and `ffmpeg`.
 
-La skill está escrita en español, y las reglas de voz (siglas deletreadas, grafías fonéticas) son para
-narración en español. El criterio de montaje no depende del idioma.
+## Language
 
-## Contribuir
+The skill is written in English, and its editing guidance does not depend on the language of the video.
+The voice recipe of the narrated screen tutorial
+([`voice.md`](skills/editing-videos/recipes/narrated-screen-tutorial/voice.md)) covers Spanish narration:
+its rules for spelled-out acronyms and phonetic spellings, and their examples, are in Spanish.
 
-Las contribuciones son bienvenidas. Antes de abrir un PR, lee [CONTRIBUTING.md](CONTRIBUTING.md) y valida la
+## Contributing
+
+Contributions are welcome. Before opening a PR, read [CONTRIBUTING.md](CONTRIBUTING.md) and validate the
 skill:
 
 ```bash
-npx skills-ref validate ./skills/edicion-de-video
+npx skills-ref validate ./skills/editing-videos
 ```
 
-## Licencia
+## License
 
-- Código y textos: [MIT](LICENSE).
-- Sonidos de `biblioteca/`: CC0 1.0, con la fuente de cada uno en
-  [`LICENCIAS.md`](skills/edicion-de-video/biblioteca/LICENCIAS.md).
+- Code and text: [MIT](LICENSE).
+- Sounds in `library/`: CC0 1.0, with each one's source in
+  [`LICENSES.md`](skills/editing-videos/library/LICENSES.md).
+- Graphics in `graphics/`: CC0 1.0, see [`LICENSES.md`](skills/editing-videos/graphics/LICENSES.md).
+- The meme reference ships no meme media; the originals belong to their owners.

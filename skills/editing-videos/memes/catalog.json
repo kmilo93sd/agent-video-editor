@@ -1,0 +1,1778 @@
+{
+  "version": 1,
+  "note": "Reference only. No meme image, clip or sound ships with this repository. Read memes/README.md before using any of these.",
+  "fields": {
+    "format": "image, gif, video or sound: the usual form of the meme.",
+    "timing_s": "Typical on-screen duration [min, max] in seconds. Text on it still follows max(1.5 s, words x 0.33 s + 0.5 s).",
+    "rights.kind": "stock, tv, film, animation, game, music, webcomic, user-generated, trope (a technique nobody owns) or unknown.",
+    "content_id_risk": "Chance of an automated YouTube Content ID match if you use the ORIGINAL media in a monetized video: low, medium or high. It is not the legal risk; a low score still allows a manual claim or a takedown.",
+    "how_to_recreate": "How to make an original version with graphics/ or HyperFrames that keeps the joke and leaves the copyrighted media out."
+  },
+  "memes": [
+    {
+      "id": "distracted-boyfriend",
+      "name": "Distracted Boyfriend",
+      "format": "image",
+      "what_it_means": "Someone abandons what they have for something new and shiny. Three labels: the person, the old thing, the new thing.",
+      "when_to_use": "A team tempted by the new framework while the old one still works; a user ignoring the feature you just built.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Three labeled cards or icons: one in the middle (\"you\") with an arrow-curved from graphics/ pointing away from the left card (\"the tool that works\") toward the right card (\"new shiny tool\"). Keep the three labels; drop the photo.",
+      "origin": "Stock photo by Barcelona photographer Antonio Guillem, shot in 2015 and sold on iStock and Shutterstock; it went viral as a meme in 2017.",
+      "rights": {
+        "likely_owner": "Antonio Guillem (photographer), licensed through stock agencies.",
+        "kind": "stock"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. It is a licensable stock photo, so using it unlicensed is a plain license breach."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/distracted-boyfriend"
+        },
+        {
+          "label": "License",
+          "url": "Search Antonio Guillem's portfolio on iStock or Shutterstock and buy a standard license for the frame"
+        }
+      ],
+      "tone_warnings": [
+        "Built on a man ogling a woman; reads as sexist to part of the audience.",
+        "Very familiar since 2017; can feel dated."
+      ]
+    },
+    {
+      "id": "this-is-fine",
+      "name": "This Is Fine",
+      "format": "image",
+      "what_it_means": "Pretending everything is OK while things are clearly falling apart.",
+      "when_to_use": "Ignoring warnings in the console, a production incident, a broken build everyone keeps merging over.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "A calm card (\"Everything is fine\") over a screen recording of the real errors, with a soft red light-leak from graphics/overlays tinted to fire colors. Or commission or draw your own scene.",
+      "origin": "Webcomic \"On Fire\" by KC Green, Gunshow #648, January 2013.",
+      "rights": {
+        "likely_owner": "KC Green (artist).",
+        "kind": "webcomic"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/this-is-fine"
+        },
+        {
+          "label": "License",
+          "url": "none known; contact the artist through his site"
+        }
+      ],
+      "tone_warnings": [
+        "Green objected publicly to uses he didn't approve (a political party's tweet in 2016); ask before monetized use."
+      ]
+    },
+    {
+      "id": "drakeposting",
+      "name": "Drakeposting (Hotline Bling approve/disapprove)",
+      "format": "image",
+      "what_it_means": "Two options: reject the first, approve the second.",
+      "when_to_use": "Wrong way vs right way: \"copy-paste the key\" vs \"put it in .env\".",
+      "timing_s": [
+        3,
+        6
+      ],
+      "how_to_recreate": "Two-row layout: cross from graphics/status beside the bad option, checkmark beside the good one, each entering when the voice names it. That is the whole joke, without the person.",
+      "origin": "Stills from Drake's \"Hotline Bling\" music video (2015, directed by Director X); first cut into the two-panel format on 4chan in October 2015.",
+      "rights": {
+        "likely_owner": "The video's copyright owner (the release came out on Cash Money, Young Money and Republic); Drake's likeness.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. Never use the video clip or the song: those carry a high risk."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/drakeposting"
+        }
+      ],
+      "tone_warnings": [
+        "Uses a real celebrity's likeness; avoid in sponsored segments."
+      ]
+    },
+    {
+      "id": "expanding-brain",
+      "name": "Expanding Brain / Galaxy Brain",
+      "format": "image",
+      "what_it_means": "Ideas ranked from simple to \"enlightened\", usually ironic: the last one is the most absurd.",
+      "when_to_use": "Ironic escalation of ways to solve a problem (print debugging, a debugger, rewriting it in another language).",
+      "timing_s": [
+        5,
+        9
+      ],
+      "how_to_recreate": "Four stacked rows that enter one by one with each idea, each with a growing glow (ring-highlight or a brighter accent per row). Use abstract shapes, not brain images.",
+      "origin": "Posted on Reddit's r/dankmemes in January 2017, evolving from an earlier format; the brain images come from unknown sources.",
+      "rights": {
+        "likely_owner": "unknown",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/galaxy-brain"
+        }
+      ],
+      "tone_warnings": [
+        "Ironic by default; make sure the audience reads the last step as a joke and not as advice."
+      ]
+    },
+    {
+      "id": "two-buttons",
+      "name": "Two Buttons (Daily Struggle)",
+      "format": "image",
+      "what_it_means": "A sweating person can't choose between two options.",
+      "when_to_use": "A real trade-off: speed vs safety, two config options that both look right.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Two big generic buttons with labels, a cursor (cursor-click-ripple) hovering between them, then the voice explains the trade-off.",
+      "origin": "Comic \"Daily Struggle\" by animator Jake Clark, posted on Tumblr in October 2014; viral on Imgur in 2015.",
+      "rights": {
+        "likely_owner": "Jake Clark (artist).",
+        "kind": "webcomic"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/daily-struggle-two-buttons"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "surprised-pikachu",
+      "name": "Surprised Pikachu",
+      "format": "image",
+      "what_it_means": "Fake shock at a completely predictable outcome.",
+      "when_to_use": "\"I skipped the backup step and lost my data\" followed by shock.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Freeze on the predictable result and add a hard punch-in (scale 1.0 to 1.08 in 0.2 s on the wrapper, inside the zoom limit) with an impact sound from library/. Don't use the character.",
+      "origin": "Screenshot from the Pokemon anime, season 1, episode 10 \"Bulbasaur and the Hidden Village\" (1997); used as a reaction image from September 2018.",
+      "rights": {
+        "likely_owner": "The Pokemon rights holders (The Pokemon Company, Nintendo, Creatures, Game Freak).",
+        "kind": "animation"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. The Pokemon rights holders are known to enforce their IP."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/surprised-pikachu"
+        }
+      ],
+      "tone_warnings": [
+        "Heavily used; can feel dated."
+      ]
+    },
+    {
+      "id": "woman-yelling-at-cat",
+      "name": "Woman Yelling at a Cat",
+      "format": "image",
+      "what_it_means": "An angry accusation answered by a confused, unbothered reply.",
+      "when_to_use": "A user blaming the app, and the app's error message calmly saying what actually happened.",
+      "timing_s": [
+        4,
+        6
+      ],
+      "how_to_recreate": "Split two cards (before-after-split with the labels changed): left an angry quote in red, right a calm reply. Text carries the joke.",
+      "origin": "Combination of a still from The Real Housewives of Beverly Hills (season 2, 2011) and a photo of a cat named Smudge; joined into one image on Twitter in May 2019.",
+      "rights": {
+        "likely_owner": "Bravo / NBCUniversal (the TV still) and the cat's owner (the photo).",
+        "kind": "tv"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/woman-yelling-at-a-cat"
+        }
+      ],
+      "tone_warnings": [
+        "The TV still shows a woman crying in a real argument; some viewers find it mean."
+      ]
+    },
+    {
+      "id": "is-this-a-pigeon",
+      "name": "Is This a Pigeon?",
+      "format": "image",
+      "what_it_means": "Confidently misidentifying something.",
+      "when_to_use": "Beginners mistaking one concept for another: \"is this a database?\" (it's a spreadsheet).",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "A callout-box pointing at the thing with the wrong label and a question mark, then a scribble-strike over the label and the right name.",
+      "origin": "Still from the anime The Brave Fighter of Sun Fighbird (1991, episode 3), produced by Sunrise; spread on Tumblr in 2011 and again in 2018.",
+      "rights": {
+        "likely_owner": "Sunrise (now part of Bandai Namco Filmworks).",
+        "kind": "animation"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/is-this-a-pigeon"
+        }
+      ],
+      "tone_warnings": [
+        "Can read as mocking the viewer's confusion; aim it at a common mistake, not at people."
+      ]
+    },
+    {
+      "id": "hide-the-pain-harold",
+      "name": "Hide the Pain Harold",
+      "format": "image",
+      "what_it_means": "Smiling while clearly suffering inside.",
+      "when_to_use": "Saying \"it's fine\" about a painful workflow before showing the better way.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "A forced-smile illustration of your own, or just the text \"Everything's fine :)\" in a callout-box over the painful screen.",
+      "origin": "Stock photos of Hungarian retired engineer Andras Arato, shot around 2010 and sold through stock agencies (Dreamstime among them).",
+      "rights": {
+        "likely_owner": "The photographer and the stock agency; Arato's likeness (he has embraced the meme).",
+        "kind": "stock"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. It is licensable stock, so buy the license if you use the photo."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/hide-the-pain-harold"
+        },
+        {
+          "label": "License",
+          "url": "Search the original photos on Dreamstime and buy a license"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "disaster-girl",
+      "name": "Disaster Girl",
+      "format": "image",
+      "what_it_means": "A smirk in front of chaos, as if you caused it on purpose.",
+      "when_to_use": "The intern who just ran a migration on production (fictional), or your own past mistake.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "A cheeky character or emoji-free illustration of your own in front of a red error screen with a light-leak in fire tones.",
+      "origin": "Photo by Dave Roth of his daughter Zoe Roth at a controlled fire in North Carolina in 2005; viral around 2007-2008. The family sold the original as an NFT in 2021.",
+      "rights": {
+        "likely_owner": "The Roth family (photographer Dave Roth).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/disaster-girl"
+        }
+      ],
+      "tone_warnings": [
+        "Real child (now an adult) in a real fire; avoid with real disasters or tragedies."
+      ]
+    },
+    {
+      "id": "success-kid",
+      "name": "Success Kid",
+      "format": "image",
+      "what_it_means": "A small, satisfying win.",
+      "when_to_use": "The test passes on the first try; the import matches every row.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "checkmark from graphics/status plus a short win line, or a fist-pump illustration of your own.",
+      "origin": "Photo by Laney Griner of her son Sammy on a beach in 2007; a meme from 2011 on Reddit.",
+      "rights": {
+        "likely_owner": "Laney Griner (photographer and parent).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. The owner actively licenses it and has objected to uses she didn't approve."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/success-kid-i-hate-sandcastles"
+        }
+      ],
+      "tone_warnings": [
+        "Griner sent a cease-and-desist over a 2019 political campaign use; do not use without permission in monetized or political content.",
+        "Dated (peak 2011-2013)."
+      ]
+    },
+    {
+      "id": "roll-safe",
+      "name": "Roll Safe (think about it)",
+      "format": "image",
+      "what_it_means": "Tapping the temple about a \"smart\" idea that is actually bad.",
+      "when_to_use": "\"You can't break production if you never deploy\" style fake life hacks.",
+      "timing_s": [
+        3,
+        4
+      ],
+      "how_to_recreate": "The fake-smart line in a callout-box, then scribble-strike and the real advice.",
+      "origin": "Character Reece Simpson (\"Roll Safe\"), played by Kayode Ewumi in the web series #HoodDocumentary (2016); viral in January 2017.",
+      "rights": {
+        "likely_owner": "Kayode Ewumi and the series' creators.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/roll-safe"
+        }
+      ],
+      "tone_warnings": [
+        "Real actor's likeness; dated."
+      ]
+    },
+    {
+      "id": "confused-math-lady",
+      "name": "Confused Math Lady",
+      "format": "image",
+      "what_it_means": "Trying to compute something hopelessly complex.",
+      "when_to_use": "A confusing pricing table, a cryptic config file.",
+      "timing_s": [
+        3,
+        4
+      ],
+      "how_to_recreate": "Float math and code fragments over the screen (small text cards drifting in), with a scribble-strike at the end. No person needed.",
+      "origin": "Brazilian actress Renata Sorrah as Nazare Tedesco in the TV Globo telenovela Senhora do Destino (2004); the math overlay was added by meme makers, popular from 2016.",
+      "rights": {
+        "likely_owner": "TV Globo; the actress's likeness.",
+        "kind": "tv"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. Avoid the GIF/clip version, which is TV footage."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/confused-math-lady"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "confused-nick-young",
+      "name": "Confused Nick Young",
+      "format": "image",
+      "what_it_means": "Total disbelief: \"what?\"",
+      "when_to_use": "When a result makes no sense (a total that is off by a factor of 10).",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Three question marks that pop in around the odd value (key-chips style chips with \"?\"), with ring-highlight on the value.",
+      "origin": "Basketball player Nick Young in the web series Thru The Lens (2014); popular on Twitter from 2015.",
+      "rights": {
+        "likely_owner": "The web series' producer; Nick Young's likeness.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/confused-nick-young-swaggy-p"
+        }
+      ],
+      "tone_warnings": [
+        "Real person's likeness; dated."
+      ]
+    },
+    {
+      "id": "blinking-white-guy",
+      "name": "Blinking White Guy",
+      "format": "gif",
+      "what_it_means": "Double-take disbelief at something just said.",
+      "when_to_use": "Right after a surprising number or a bad practice shown on screen.",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "A double blink can be done with a quick hold: freeze the frame and add a short zoom punch-in plus a pause in the voice. No face needed.",
+      "origin": "Drew Scanlon reacting in a Giant Bomb video (December 2013); viral as a GIF in February 2017.",
+      "rights": {
+        "likely_owner": "Giant Bomb (the video) and Drew Scanlon's likeness.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "It is a clip from an online video series; the publisher could match or claim it, though no claims are documented."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/blinking-white-guy"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2017)."
+      ]
+    },
+    {
+      "id": "spider-man-pointing",
+      "name": "Spider-Man Pointing at Spider-Man",
+      "format": "image",
+      "what_it_means": "Two things accusing each other of being the same thing.",
+      "when_to_use": "Two libraries, two settings or two functions that do exactly the same thing.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Two identical cards facing each other with arrow-straight pointing from each to the other.",
+      "origin": "Frame from the 1967 Spider-Man cartoon, episode \"Double Identity\"; posted as a meme from 2011.",
+      "rights": {
+        "likely_owner": "Marvel (Disney), likely; the cartoon was made by Grantray-Lawrence Animation.",
+        "kind": "animation"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. Marvel/Disney IP."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/spider-man-pointing-at-spider-man"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "monkey-puppet-side-eye",
+      "name": "Awkward Look Monkey Puppet",
+      "format": "image",
+      "what_it_means": "Awkwardly looking away after being caught.",
+      "when_to_use": "When the demo hits the exact bug you said wasn't there; an awkward silence.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Cut the voice, hold the frame for a beat with the crickets idea (silence or a short sting), then a small camera move away from the bug (a reframe inside the 1.10 zoom rule).",
+      "origin": "Puppet from a Japanese children's TV show (KYM names it \"Ookiku Naru Ko\"); the side-glance edit was made around 2016 and spread in 2019.",
+      "rights": {
+        "likely_owner": "unknown (the TV producer); the edit's creator is credited by KYM.",
+        "kind": "tv"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/awkward-look-monkey-puppet"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "mocking-spongebob",
+      "name": "Mocking SpongeBob",
+      "format": "image",
+      "what_it_means": "Repeating an opinion in aLtErNaTiNg CaPs to mock it.",
+      "when_to_use": "Rarely right for a tutorial; maybe to mock a myth (\"YoU dOn'T nEeD bAcKuPs\").",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "Just the alternating-caps text on a card; the caps carry the joke.",
+      "origin": "SpongeBob SquarePants episode \"Little Yellow Book\" (2012); a meme from May 2017.",
+      "rights": {
+        "likely_owner": "Nickelodeon (Paramount).",
+        "kind": "animation"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/mocking-spongebob"
+        }
+      ],
+      "tone_warnings": [
+        "Mean-spirited by design: it mocks a person's words. Point it at an idea, never at a real commenter."
+      ]
+    },
+    {
+      "id": "grus-plan",
+      "name": "Gru's Plan",
+      "format": "image",
+      "what_it_means": "A four-step plan whose last step reveals a flaw, then a double take.",
+      "when_to_use": "Plans that fail at the last step: \"1. write code 2. test 3. deploy 4. forgot the migration\".",
+      "timing_s": [
+        6,
+        9
+      ],
+      "how_to_recreate": "Four slides that enter one by one (step-counter style), the fourth with the flaw; repeat the fourth with a ring-highlight. Original drawings only.",
+      "origin": "Scene from the film Despicable Me (2010); four-panel template from Reddit, March 2018.",
+      "rights": {
+        "likely_owner": "Universal Pictures / Illumination.",
+        "kind": "film"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. Never use the film clip."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/grus-plan"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "anakin-padme",
+      "name": "Anakin and Padme (\"for the better, right?\")",
+      "format": "image",
+      "what_it_means": "A statement, a hopeful question, silence, and the worrying realization.",
+      "when_to_use": "When an assumption sounds fine until you think about it: \"we store passwords\" / \"hashed, right?\" / ... / \"hashed, right?\"",
+      "timing_s": [
+        6,
+        8
+      ],
+      "how_to_recreate": "Four-beat text exchange in two speech cards (callout-box), the last one repeated with a slow zoom (1.0 to 1.06).",
+      "origin": "Scene from Star Wars: Episode II - Attack of the Clones (2002); four-panel format popular from 2021.",
+      "rights": {
+        "likely_owner": "Lucasfilm (Disney).",
+        "kind": "film"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. Disney enforces Star Wars IP; never use the clip or the score."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/for-the-better-right"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "uno-draw-25",
+      "name": "UNO Draw 25",
+      "format": "image",
+      "what_it_means": "Someone would rather take a huge penalty than do one simple thing.",
+      "when_to_use": "\"Read the docs or spend 25 hours debugging\" and the person picks 25.",
+      "timing_s": [
+        4,
+        6
+      ],
+      "how_to_recreate": "A generic card (rounded rectangle, your colors, no UNO logo or card design) with the simple task, then a pile of cards stacking up.",
+      "origin": "Format from January 2020 (Facebook, then Twitter) built around a custom card from the UNO game.",
+      "rights": {
+        "likely_owner": "Mattel owns the UNO trademark and card design; the image of the man holding cards: unknown.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown. The UNO card design and logo are trademarks: recreate without them."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/draw-25"
+        }
+      ],
+      "tone_warnings": [
+        "Trademark: do not reproduce the UNO logo or card style."
+      ]
+    },
+    {
+      "id": "left-exit-12",
+      "name": "Left Exit 12 Off Ramp",
+      "format": "image",
+      "what_it_means": "Swerving at the last second away from the sensible path.",
+      "when_to_use": "Ignoring the documented approach for a hack at the last moment.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "A simple road diagram you draw (two lanes, arrow-curved swerving to the exit), labels on each lane.",
+      "origin": "Image of a car swerving onto an off-ramp; KYM documents the labeled template from December 2017 and traces the picture to a 2013 driving video. The template image's owner is unclear.",
+      "rights": {
+        "likely_owner": "unknown",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/left-exit-12-off-ramp"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "bike-fall",
+      "name": "Bike Fall (stick in own wheel)",
+      "format": "image",
+      "what_it_means": "Sabotaging yourself, then blaming something else.",
+      "when_to_use": "Breaking your own build and blaming the tool.",
+      "timing_s": [
+        4,
+        6
+      ],
+      "how_to_recreate": "Three cards: the action (\"skips tests\"), the crash (a cross from graphics/status), the blame (\"this framework is broken\").",
+      "origin": "Comic \"Baton roue\" by French artist Corentin Penloup (KYM page \"baton-roue\").",
+      "rights": {
+        "likely_owner": "Corentin Penloup (artist).",
+        "kind": "webcomic"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/baton-roue"
+        }
+      ],
+      "tone_warnings": [
+        "Easy to aim at a group of people; aim it at a habit."
+      ]
+    },
+    {
+      "id": "change-my-mind",
+      "name": "Change My Mind",
+      "format": "image",
+      "what_it_means": "Stating a hot take and inviting debate.",
+      "when_to_use": "A deliberately provocative opinion as a chapter hook (\"tabs are fine. Change my mind\").",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "A sign-like card with the statement and a small \"Change my mind\" line; no table, no person.",
+      "origin": "Photo of political commentator Steven Crowder at a university campus table in February 2018.",
+      "rights": {
+        "likely_owner": "unknown photographer; Steven Crowder's likeness and branding.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/steven-crowders-change-my-mind-campus-sign"
+        }
+      ],
+      "tone_warnings": [
+        "Tied to a polarizing political commentator; the original sign was about a political topic. Use the text format only."
+      ]
+    },
+    {
+      "id": "epic-handshake",
+      "name": "Epic Handshake",
+      "format": "image",
+      "what_it_means": "Two different groups agreeing on one thing.",
+      "when_to_use": "Two tools or teams that share a feature or a pain point.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Two labeled cards meeting in the middle with a third label on the overlap (a simple Venn-like layout).",
+      "origin": "Arm-wrestle handshake from the film Predator (1987); the most common template is a painted fan version.",
+      "rights": {
+        "likely_owner": "20th Century Studios (Disney) for the film; the painted version's author: unknown.",
+        "kind": "film"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/epic-handshake"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "stonks",
+      "name": "Stonks",
+      "format": "image",
+      "what_it_means": "Ironic celebration of a dumb \"profit\" or bad financial logic.",
+      "when_to_use": "Ironic win: \"I saved 2 ms by making the code unreadable. Stonks.\"",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "A rising line chart (progress-bar or a simple SVG line drawn on) with a deliberately misspelled label of your own.",
+      "origin": "Meme Man 3D head placed over a stock chart, posted by the Facebook page Special Meme Fresh in 2017.",
+      "rights": {
+        "likely_owner": "unknown",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/stonks"
+        }
+      ],
+      "tone_warnings": [
+        "Associated with meme-stock trading; avoid in finance content where it could read as advice."
+      ]
+    },
+    {
+      "id": "always-has-been",
+      "name": "Always Has Been",
+      "format": "image",
+      "what_it_means": "Realizing something was true all along, answered with \"always has been\".",
+      "when_to_use": "Revealing that the \"new\" feature is just a wrapper over an old one.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Two-line reveal: question card, then the answer card with a slow zoom (1.0 to 1.06). A space backdrop you draw with CSS gradients works.",
+      "origin": "MS Paint drawing posted on Reddit in December 2016; the \"Wait, it's all Ohio?\" version from October 2019 made it popular.",
+      "rights": {
+        "likely_owner": "unknown (user-generated).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/wait-its-all-ohio-always-has-been"
+        }
+      ],
+      "tone_warnings": [
+        "The original shows one astronaut pointing a gun at the other; drop the gun."
+      ]
+    },
+    {
+      "id": "iq-bell-curve",
+      "name": "IQ Bell Curve (midwit)",
+      "format": "image",
+      "what_it_means": "Beginners and experts end up with the same simple answer, while the middle overthinks.",
+      "when_to_use": "\"Just use a spreadsheet\" at both ends of the curve, a complex stack in the middle.",
+      "timing_s": [
+        5,
+        8
+      ],
+      "how_to_recreate": "A bell curve you draw (SVG path drawn on) with three labels at low, middle and high, entering with the voice. Skip the cartoon faces.",
+      "origin": "User-generated format popular on imageboards and Twitter in the early 2020s, built on Wojak-style drawings; exact first instance not verified.",
+      "rights": {
+        "likely_owner": "unknown",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/iq-bell-curve-midwit"
+        }
+      ],
+      "tone_warnings": [
+        "Mocks people as low or mid IQ; the Wojak drawings have also been used in hateful contexts. Keep only the curve and the labels."
+      ]
+    },
+    {
+      "id": "doge",
+      "name": "Doge",
+      "format": "image",
+      "what_it_means": "Inner monologue in broken English: \"such wow, much X\".",
+      "when_to_use": "Light self-irony about a feature list (\"much config, very wow\").",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Colorful small text in broken English scattered around the screen (tooltip-style pills in different colors).",
+      "origin": "Photo of Kabosu, a Shiba Inu, posted by her owner Atsuko Sato on her blog in 2010; Kabosu died in May 2024.",
+      "rights": {
+        "likely_owner": "Atsuko Sato (photographer and owner).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/doge"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2013).",
+        "Tied to a cryptocurrency; avoid in finance content."
+      ]
+    },
+    {
+      "id": "task-failed-successfully",
+      "name": "Task Failed Successfully",
+      "format": "image",
+      "what_it_means": "A contradictory error message: it failed and succeeded at once.",
+      "when_to_use": "Showing a real contradictory message in an app (\"Error: 0 errors\").",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "A generic dialog card of your own (neutral title bar, no Windows chrome or icons) with the contradictory text and a single OK button.",
+      "origin": "unknown. A parody of Windows-style error dialogs that circulated as an image macro in the 2010s; no verified first instance.",
+      "rights": {
+        "likely_owner": "unknown (user-generated); the Windows look is Microsoft's trade dress.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Content ID matches video and audio, so a still shown for a few seconds is unlikely to be matched automatically; the owner can still file a manual claim or takedown."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "No dedicated page found; search knowyourmeme.com for the phrase"
+        }
+      ],
+      "tone_warnings": [
+        "Do not copy Windows UI chrome, icons or sounds."
+      ]
+    },
+    {
+      "id": "nobody-absolutely-no-one",
+      "name": "Nobody: / Absolutely no one:",
+      "format": "image",
+      "what_it_means": "Doing something nobody asked for.",
+      "when_to_use": "Self-irony before a tangent: \"Nobody: / Me: let's benchmark the date parser.\"",
+      "timing_s": [
+        3,
+        4
+      ],
+      "how_to_recreate": "Two text lines on a card; the second enters 0.6 s after the first. Pure text, nothing to license.",
+      "origin": "Text format spread on Twitter around September 2018, later on TikTok.",
+      "rights": {
+        "likely_owner": "Nobody (a text format).",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Pure text; nothing to match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/nobody"
+        }
+      ],
+      "tone_warnings": [
+        "Overused; one per video at most."
+      ]
+    },
+    {
+      "id": "tier-list",
+      "name": "Tier list",
+      "format": "image",
+      "what_it_means": "Ranking things into S/A/B/C/D rows.",
+      "when_to_use": "Comparing tools, plugins or approaches with a clear verdict per item.",
+      "timing_s": [
+        8,
+        20
+      ],
+      "how_to_recreate": "Rows of colored labels (S, A, B...) and item chips that slide into their row as the voice ranks them, each anchored to its word.",
+      "origin": "Ranking format from fighting-game communities (earliest documented 2005); the TierMaker site popularized templates.",
+      "rights": {
+        "likely_owner": "Nobody owns the format; specific templates may use copyrighted images.",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Your own chips and labels; nothing to match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/tier-lists"
+        }
+      ],
+      "tone_warnings": [
+        "A low ranking for a real product can read as an attack; explain the criteria."
+      ]
+    },
+    {
+      "id": "trollface",
+      "name": "Trollface",
+      "format": "image",
+      "what_it_means": "Smug satisfaction at having pranked someone.",
+      "when_to_use": "Almost never in a tutorial; at most a self-aware nod in an explainer about internet culture.",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "A smug line of text (\"gotcha\") with a quick zoom; don't draw a lookalike face.",
+      "origin": "MS Paint drawing by Carlos Ramirez (\"Whynne\"), posted on DeviantArt in September 2008.",
+      "rights": {
+        "likely_owner": "Carlos Ramirez, who registered the copyright and has collected licensing fees.",
+        "kind": "webcomic"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Not a Content ID issue but the owner actively enforces: a registered copyright with a history of licensing demands."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/trollface"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2008-2012).",
+        "Actively enforced copyright."
+      ]
+    },
+    {
+      "id": "grumpy-cat",
+      "name": "Grumpy Cat",
+      "format": "image",
+      "what_it_means": "A flat, grumpy \"no\".",
+      "when_to_use": "A blunt \"No.\" in response to a bad idea.",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "A big \"No.\" card with a cross from graphics/status. Don't use the cat or a lookalike.",
+      "origin": "Tardar Sauce, a cat owned by Tabatha Bundesen, viral from 2012; the cat died in 2019.",
+      "rights": {
+        "likely_owner": "Grumpy Cat Limited (the owner's company).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Not a Content ID issue but a commercially managed brand: the company won a copyright and trademark suit against a beverage company in 2018."
+      },
+      "sourcing": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Grumpy_Cat"
+        },
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/grumpy-cat"
+        }
+      ],
+      "tone_warnings": [
+        "Dated.",
+        "Commercially licensed brand: no unlicensed use."
+      ]
+    },
+    {
+      "id": "kombucha-girl",
+      "name": "Kombucha Girl",
+      "format": "video",
+      "what_it_means": "Mixed reaction: disgust, reconsideration, reluctant approval.",
+      "when_to_use": "Trying a tool that feels awkward at first but grows on you.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "Three short text beats (\"ugh\" / \"wait\" / \"...okay\") on cards, or your own on-camera reaction if the channel has a presenter.",
+      "origin": "TikTok by Brittany Tomlinson (now Brittany Broski), August 2019.",
+      "rights": {
+        "likely_owner": "Brittany Tomlinson (creator).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "A clip from a creator's video; claims are possible and the creator is a professional with brand deals."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/people/kombucha-girl-brittany-broski"
+        }
+      ],
+      "tone_warnings": [
+        "Real person's likeness; dated (2019)."
+      ]
+    },
+    {
+      "id": "trade-offer",
+      "name": "Trade Offer",
+      "format": "video",
+      "what_it_means": "\"I receive X, you receive Y\": a lopsided deal.",
+      "when_to_use": "Explaining a trade-off: \"I receive: 2 minutes of setup. You receive: no more manual imports.\"",
+      "timing_s": [
+        4,
+        6
+      ],
+      "how_to_recreate": "Two-column card (\"I receive\" / \"You receive\") with items entering as the voice says them. Keep the joke; drop the person and the audio.",
+      "origin": "TikTok format from 2021 (see KYM for the creators); the popular version has a short music sting.",
+      "rights": {
+        "likely_owner": "The TikTok creators; the audio's owner: unknown.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "Reusing the original clip brings its music sting along, and music is what Content ID matches most."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/trade-offer"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "record-scratch-freeze-frame",
+      "name": "Record scratch freeze frame (\"Yep, that's me\")",
+      "format": "video",
+      "what_it_means": "Freeze on a chaotic moment while a narrator says \"Yep, that's me. You're probably wondering how I got here.\"",
+      "when_to_use": "Cold open: show the broken end state first, freeze, then rewind to explain. Fits the \"result first\" hook rule.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "Freeze the frame (PNG freeze per the skill's freeze recipe), slight desaturation on the wrapper, a short scratch sound you generate or take CC0, and your own voice line. The format is a cliche nobody owns.",
+      "origin": "Film and TV cliche of a freeze frame with narration; KYM documents the \"Yep, that's me\" meme format from 2015-2016.",
+      "rights": {
+        "likely_owner": "Nobody owns the technique; any clip or song you reuse has its own owner.",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Your own freeze, voice and sound: nothing to match. High if you lift a film clip or a song for it."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/record-scratch-freeze-frame-yep-thats-me"
+        }
+      ],
+      "tone_warnings": [
+        "Overused as an opener; keep it short."
+      ]
+    },
+    {
+      "id": "dramatic-zoom",
+      "name": "Dramatic zoom (Dramatic Chipmunk)",
+      "format": "video",
+      "what_it_means": "A sudden dramatic punch-in on a face or detail with a dramatic music sting.",
+      "when_to_use": "Mock-dramatic reveal of a tiny detail (\"and then... the semicolon\").",
+      "timing_s": [
+        1.5,
+        3
+      ],
+      "how_to_recreate": "Punch-in on the wrapper from 1.0 to the skill's 1.10 limit in about 0.3 s (a deliberate exception to the slow zoom; keep it rare), a dark vignette, and an original three-note sting.",
+      "origin": "Clip of a prairie dog (not a chipmunk) from the Japanese TV show \"Hello! Morning\", uploaded to YouTube in June 2007 with music from the film Young Frankenstein (1974).",
+      "rights": {
+        "likely_owner": "The Japanese broadcaster (footage) and the film's music rights holders.",
+        "kind": "tv"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "TV footage plus a film score: both are the kind of reference Content ID holds."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/dramatic-chipmunk"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2007); a breakneck zoom can feel cheap in a serious tutorial."
+      ]
+    },
+    {
+      "id": "to-be-continued",
+      "name": "To Be Continued (JoJo)",
+      "format": "video",
+      "what_it_means": "Freeze on a cliffhanger with a \"To be continued\" arrow and a guitar riff.",
+      "when_to_use": "Outro of part 1 of a series, or before a fail is shown after a break.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Freeze frame with a slight sepia, an arrow-straight with \"To be continued\" text sliding in from the left, and original music. Never the Yes song.",
+      "origin": "End card of the JoJo's Bizarre Adventure anime (2012), which uses the song \"Roundabout\" by Yes (1971); popular as a meme on Vine from 2016.",
+      "rights": {
+        "likely_owner": "The song's publishers and label (Yes, \"Roundabout\"); David Production / Shueisha for the anime card.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "\"Roundabout\" is a commercial recording; using it in a monetized video is a likely Content ID match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/yes-roundabout-to-be-continued"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2016)."
+      ]
+    },
+    {
+      "id": "curb-outro",
+      "name": "Curb Your Enthusiasm outro (\"Directed by Robert B. Weide\")",
+      "format": "video",
+      "what_it_means": "Freeze on an awkward failure, cut to credits and a jaunty tuba tune.",
+      "when_to_use": "End a blooper or a failed attempt shown on purpose.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Freeze, cut to a black card with your own credits text, and an original jaunty tune. The credit with a real director's name is not yours to use.",
+      "origin": "HBO's Curb Your Enthusiasm end credits and the theme \"Frolic\" by Luciano Michelini (originally from a 1974 Italian film).",
+      "rights": {
+        "likely_owner": "HBO / the show's producers (the credits) and the composition's publisher (\"Frolic\").",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "\"Frolic\" is a commercial composition; it is a likely Content ID match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/curb-your-enthusiasm-theme-remixes"
+        }
+      ],
+      "tone_warnings": [
+        "Uses a real person's name (the director) in the credit; dated."
+      ]
+    },
+    {
+      "id": "time-card",
+      "name": "SpongeBob time card (\"A few moments later\")",
+      "format": "video",
+      "what_it_means": "A narrator-voiced card that skips time.",
+      "when_to_use": "Skipping a wait: an install, a render, an import. Matches the skill's rule of cutting waits.",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "chapter-card or a smaller text card with \"A few moments later\" in a playful font you license (OFL), read by your own voice. Not the show's cards or voice.",
+      "origin": "Title cards from SpongeBob SquarePants (from 1999), read by a French-accented narrator; reaction images from around 2009.",
+      "rights": {
+        "likely_owner": "Nickelodeon (Paramount).",
+        "kind": "animation"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "The card images and narration come from the show's video and audio, which is matchable."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/spongebob-time-cards"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "hackerman",
+      "name": "Hackerman / \"I'm in\"",
+      "format": "video",
+      "what_it_means": "Over-the-top movie hacker typing fast and declaring \"I'm in\".",
+      "when_to_use": "Self-irony when doing something mundane in a terminal (running a script, changing a setting).",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Your own terminal recording sped up, green-on-black text, and \"I'm in.\" in a tooltip. The \"I'm in\" line is a movie cliche nobody owns.",
+      "origin": "Character Hackerman from the short film Kung Fury (2015, David Sandberg); the \"I'm in\" line is an older hacker-movie cliche.",
+      "rights": {
+        "likely_owner": "Laser Unicorns / David Sandberg (Kung Fury).",
+        "kind": "film"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Kung Fury was released free online but is still copyrighted; footage reuse can be claimed."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/hackerman"
+        }
+      ],
+      "tone_warnings": [
+        "Typing sped up past 1.5x breaks the skill's speed rule; keep the joke in the text."
+      ]
+    },
+    {
+      "id": "coffin-dance",
+      "name": "Coffin Dance",
+      "format": "video",
+      "what_it_means": "A failure so bad it gets a funeral.",
+      "when_to_use": "Almost never in a tutorial. Avoid in anything about real loss.",
+      "timing_s": [
+        3,
+        5
+      ],
+      "how_to_recreate": "Not recreatable without the footage and the song; use a cross plus a short sad-trombone of your own instead.",
+      "origin": "Ghanaian pallbearers (Nana Otafrija Pallbearing Service) dancing with a coffin, set to \"Astronomia\" by Tony Igy (Vicetone remix); peak meme in March 2020.",
+      "rights": {
+        "likely_owner": "The footage's owner: unknown; \"Astronomia\": Tony Igy and the remix's label.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "\"Astronomia\" is a commercial recording; very likely matched."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/coffin-dance-dancing-pallbearers"
+        }
+      ],
+      "tone_warnings": [
+        "About death and real funerals; peaked during the 2020 pandemic, so it can read as insensitive."
+      ]
+    },
+    {
+      "id": "rickroll",
+      "name": "Rickroll",
+      "format": "video",
+      "what_it_means": "Bait-and-switch: you expected something and got \"Never Gonna Give You Up\".",
+      "when_to_use": "Avoid in tutorials: baiting viewers wastes their time. At most mention it in an explainer about internet culture.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "Don't recreate the song. A text-only nod (\"no, it's not a rickroll\") is enough.",
+      "origin": "Rick Astley's single \"Never Gonna Give You Up\" (1987, RCA); the bait-link prank spread around 2007.",
+      "rights": {
+        "likely_owner": "The recording's label (RCA, now Sony Music) and the song's publishers.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "Major-label recording and music video: one of the most likely Content ID matches there is."
+      },
+      "sourcing": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rickrolling"
+        },
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/rickroll"
+        }
+      ],
+      "tone_warnings": [
+        "Dated; misleads the viewer."
+      ]
+    },
+    {
+      "id": "deal-with-it",
+      "name": "Deal With It (sunglasses drop)",
+      "format": "gif",
+      "what_it_means": "Pixel sunglasses drop onto a face: smug confidence.",
+      "when_to_use": "After a clean, confident solution: \"one line. Deal with it.\"",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "Draw your own pixel sunglasses as an SVG (simple rectangles) and drop them in with a GSAP y tween, plus a short CC0 click. The look is generic.",
+      "origin": "Animated pixel sunglasses format standardized around 2010 (KYM credits a dump.fm contest); the phrase is older.",
+      "rights": {
+        "likely_owner": "Nobody clearly owns the format; specific GIFs: unknown.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Your own drawing; nothing to match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/deal-with-it"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2010-2014)."
+      ]
+    },
+    {
+      "id": "nyan-cat",
+      "name": "Nyan Cat",
+      "format": "gif",
+      "what_it_means": "Absurd, endless, joyful loop.",
+      "when_to_use": "Almost never in a tutorial; maybe as an ironic \"loading\" gag.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "An original looping progress-bar with a rainbow gradient fill; no cat, no song.",
+      "origin": "Animation by Chris Torres (April 2011) set to the song \"Nyanyanyanyanyanyanya!\" by daniwell (2010); Torres sold the original as an NFT in 2021.",
+      "rights": {
+        "likely_owner": "Chris Torres (animation); daniwell (song).",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "The song has an identifiable owner and the animation is actively managed by its creator."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/nyan-cat"
+        }
+      ],
+      "tone_warnings": [
+        "Dated (2011)."
+      ]
+    },
+    {
+      "id": "wasted",
+      "name": "Wasted (GTA)",
+      "format": "video",
+      "what_it_means": "Slow-motion, desaturated fail with a big \"WASTED\" title.",
+      "when_to_use": "A dramatic fail shown on purpose (the app crashes), as a joke.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Desaturate and slow the wrapper (only on your own footage, not a tutorial step), and a generic serif title like \"FAILED\" in your own type. No game font or sound.",
+      "origin": "Death screen of the Grand Theft Auto games (Rockstar Games); the GTA V version is the meme.",
+      "rights": {
+        "likely_owner": "Rockstar Games / Take-Two Interactive.",
+        "kind": "game"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "Game footage and its sound are matchable; Take-Two is known to enforce."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/wasted"
+        }
+      ],
+      "tone_warnings": [
+        "Built on character death in a violent game; slow-motion breaks the tutorial speed rule."
+      ]
+    },
+    {
+      "id": "mission-failed",
+      "name": "Mission Failed, We'll Get 'Em Next Time",
+      "format": "sound",
+      "what_it_means": "A fail treated like a lost video-game mission.",
+      "when_to_use": "Light-hearted fail before showing the fix.",
+      "timing_s": [
+        2,
+        3
+      ],
+      "how_to_recreate": "Your own voice reading a similar line over a cross from graphics/status, with a low CC0 impact.",
+      "origin": "Voice line from Call of Duty: Modern Warfare 2 (Infinity Ward / Activision, 2009); a Vine fail meme from 2016.",
+      "rights": {
+        "likely_owner": "Activision (game audio) and the voice actor's performance.",
+        "kind": "game"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Game audio owned by a large publisher; enforcement on memes is not documented but it is claimable."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/mission-failed-well-get-em-next-time"
+        }
+      ],
+      "tone_warnings": [
+        "Military-shooter framing; dated."
+      ]
+    },
+    {
+      "id": "windows-error-sound",
+      "name": "Windows XP error (sound and dialog)",
+      "format": "sound",
+      "what_it_means": "A system error noise: something went wrong.",
+      "when_to_use": "A real error in the demo, or a list of things that go wrong.",
+      "timing_s": [
+        0.5,
+        1.5
+      ],
+      "how_to_recreate": "A short CC0 error sound from library/ and a generic dialog card of your own. No Windows chrome, icons or sounds.",
+      "origin": "System sounds and dialogs of Microsoft Windows XP (2001); remixes became a meme.",
+      "rights": {
+        "likely_owner": "Microsoft (sounds and UI design).",
+        "kind": "stock"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Microsoft owns the sounds; matches of short system sounds are uncommon but claimable, and the UI chrome is trade dress."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/windows-xp-system-sound-remixes"
+        }
+      ],
+      "tone_warnings": [
+        "Copying the OS look can imply Microsoft endorsement."
+      ]
+    },
+    {
+      "id": "sad-trombone",
+      "name": "Sad trombone (wah wah wah)",
+      "format": "sound",
+      "what_it_means": "A descending \"wah wah wah wahhh\": a letdown.",
+      "when_to_use": "A failed attempt or a disappointing result shown on purpose.",
+      "timing_s": [
+        1.5,
+        2.5
+      ],
+      "how_to_recreate": "Record or synthesize four descending notes yourself, or take a CC0 version and log it in library/LICENSES.md.",
+      "origin": "A brass gag from early 20th-century vaudeville and cartoons; a web meme around 2008-2010.",
+      "rights": {
+        "likely_owner": "Nobody owns the gag; every specific recording has its own owner.",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Low with your own or a CC0 recording; a recording lifted from a library or a show can match."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/womp-womp-slang"
+        }
+      ],
+      "tone_warnings": [
+        "Overused; one per video."
+      ]
+    },
+    {
+      "id": "crickets",
+      "name": "Crickets (awkward silence)",
+      "format": "sound",
+      "what_it_means": "Nobody laughs or responds.",
+      "when_to_use": "After a joke that falls flat, or a feature nobody uses.",
+      "timing_s": [
+        1.5,
+        3
+      ],
+      "how_to_recreate": "A CC0 field recording of crickets at low level, under a held frame. Watch the skill's silence rule (3 s warning, 6 s cap without voice).",
+      "origin": "Comedy cliche from radio and TV; no single origin.",
+      "rights": {
+        "likely_owner": "Nobody owns the gag; every recording has its own owner.",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Low with a CC0 or own recording."
+      },
+      "sourcing": [
+        {
+          "label": "Sound source",
+          "url": "Search CC0 field recordings (e.g. freesound.org filtered by CC0) and log the license"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "rimshot",
+      "name": "Rimshot (ba dum tss)",
+      "format": "sound",
+      "what_it_means": "Drum sting after a pun or a bad joke.",
+      "when_to_use": "Right after a deliberate pun in the voice.",
+      "timing_s": [
+        1,
+        1.5
+      ],
+      "how_to_recreate": "A CC0 drum sting or one you record; no visual needed, or a quick punch-in.",
+      "origin": "Drum fill from vaudeville and stand-up comedy; no single origin.",
+      "rights": {
+        "likely_owner": "Nobody owns the gag; every recording has its own owner.",
+        "kind": "trope"
+      },
+      "content_id_risk": {
+        "level": "low",
+        "reason": "Low with a CC0 or own recording."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/rimshot-ba-dum-tss"
+        }
+      ],
+      "tone_warnings": [
+        "Cheesy on purpose; one per video."
+      ]
+    },
+    {
+      "id": "vine-boom",
+      "name": "Vine boom",
+      "format": "sound",
+      "what_it_means": "A deep, sudden boom that punctuates a reveal or a stare.",
+      "when_to_use": "Reveal of a surprising number, sparingly.",
+      "timing_s": [
+        0.5,
+        1
+      ],
+      "how_to_recreate": "A CC0 impact from library/ (pick the deepest), 2-4 frames before the reveal, per the skill's SFX rules.",
+      "origin": "KYM traces it to a metallic impact in a 2012 Bluezone Corporation sample pack; popular on Vine from 2014.",
+      "rights": {
+        "likely_owner": "Bluezone Corporation (per KYM); the pack's license terms: check them before use.",
+        "kind": "stock"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Third parties re-upload and sometimes register popular meme sounds; the original is a commercial sample."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/vine-thud-boom-sound-effect"
+        }
+      ],
+      "tone_warnings": [
+        "Overused and loud; at most once per video, never on every cut."
+      ]
+    },
+    {
+      "id": "bruh",
+      "name": "Bruh sound",
+      "format": "sound",
+      "what_it_means": "Deadpan \"bruh\": disbelief at something dumb.",
+      "when_to_use": "Reacting to a silly bug, as a voice line.",
+      "timing_s": [
+        0.5,
+        1
+      ],
+      "how_to_recreate": "Your own voice line, recorded or TTS with your brand voice.",
+      "origin": "Vine from 2014 (per KYM, a dubbed voice-over on a basketball clip).",
+      "rights": {
+        "likely_owner": "The voice-over's creator (per KYM); unknown otherwise.",
+        "kind": "user-generated"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "A recording with an owner; re-uploads may be registered by third parties."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/bruh-sound-effect-2"
+        }
+      ],
+      "tone_warnings": [
+        "Slangy; can feel disrespectful toward the viewer."
+      ]
+    },
+    {
+      "id": "oof",
+      "name": "Roblox \"oof\"",
+      "format": "sound",
+      "what_it_means": "A short grunt for a small fail.",
+      "when_to_use": "A minor mistake in a light-hearted explainer.",
+      "timing_s": [
+        0.5,
+        1
+      ],
+      "how_to_recreate": "Your own short voice grunt.",
+      "origin": "Death sound used by Roblox, taken from the game Messiah (2000); after a licensing dispute with composer Tommy Tallarico, Roblox removed it in July 2022.",
+      "rights": {
+        "likely_owner": "Disputed: claimed by Tommy Tallarico; Roblox licensed it for a time.",
+        "kind": "game"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Ownership was disputed and enforced against Roblox itself; avoid the original."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/oof-roblox-death-sound"
+        }
+      ],
+      "tone_warnings": [
+        "Its ownership dispute is public; don't use it."
+      ]
+    },
+    {
+      "id": "jeopardy-think",
+      "name": "Jeopardy \"Think!\" (waiting music)",
+      "format": "sound",
+      "what_it_means": "Waiting-music jingle while someone thinks.",
+      "when_to_use": "Avoid: cut waits instead (skill rule). At most a short \"think about it\" pause in an explainer.",
+      "timing_s": [
+        2,
+        5
+      ],
+      "how_to_recreate": "An original 4-6 s waiting loop at low level, or simply cut the wait.",
+      "origin": "\"Think!\" composed by Merv Griffin for the game show Jeopardy! (1960s).",
+      "rights": {
+        "likely_owner": "Merv Griffin's estate; the publisher: unknown.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "A well-known commercial composition; likely to be matched."
+      },
+      "sourcing": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jeopardy!#Theme_music"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "inception-braam",
+      "name": "Inception \"BRAAAM\"",
+      "format": "sound",
+      "what_it_means": "A huge brass blast: epic, ominous moment.",
+      "when_to_use": "Ironic epic reveal of something tiny.",
+      "timing_s": [
+        1.5,
+        3
+      ],
+      "how_to_recreate": "Layer a low synth pad and a brass-like CC0 sample, or generate a short original sting.",
+      "origin": "Brass blast from the film Inception (2010) and its trailers; authorship is disputed (Hans Zimmer and trailer composers).",
+      "rights": {
+        "likely_owner": "Warner Bros. and the composers; authorship disputed.",
+        "kind": "film"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "Film score and trailer music are typical Content ID references."
+      },
+      "sourcing": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/BRAAAM"
+        }
+      ],
+      "tone_warnings": [
+        "Cliche; loud."
+      ]
+    },
+    {
+      "id": "metal-gear-alert",
+      "name": "Metal Gear alert (\"!\")",
+      "format": "sound",
+      "what_it_means": "A sharp alert sting with a red exclamation mark: \"you've been spotted\".",
+      "when_to_use": "When the viewer should notice a warning or an error that pops up.",
+      "timing_s": [
+        0.8,
+        1.5
+      ],
+      "how_to_recreate": "A red \"!\" drawn by you above the element (tooltip with a single glyph) and a short CC0 notification sound.",
+      "origin": "Enemy alert sound and \"!\" icon from Metal Gear Solid (Konami, 1998).",
+      "rights": {
+        "likely_owner": "Konami.",
+        "kind": "game"
+      },
+      "content_id_risk": {
+        "level": "medium",
+        "reason": "Game audio owned by Konami; claimable."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/memes/metal-gear-solid-enemy-alert"
+        }
+      ],
+      "tone_warnings": []
+    },
+    {
+      "id": "oh-no-capone",
+      "name": "\"Oh no, oh no, oh no no no no no\"",
+      "format": "sound",
+      "what_it_means": "Something is about to go very wrong.",
+      "when_to_use": "Right before a fail you show on purpose.",
+      "timing_s": [
+        2,
+        4
+      ],
+      "how_to_recreate": "Your own voice saying \"oh no\" over a held frame, or an original short sting. Never the song.",
+      "origin": "Song \"Oh No\" by Capone, which samples The Shangri-Las' \"Remember (Walking in the Sand)\" (1964); viral on TikTok. Release year of Capone's track: unknown (sources disagree).",
+      "rights": {
+        "likely_owner": "Capone's label and publishers, plus the sample's rights holders.",
+        "kind": "music"
+      },
+      "content_id_risk": {
+        "level": "high",
+        "reason": "A commercial recording with a cleared or uncleared sample; likely to be matched."
+      },
+      "sourcing": [
+        {
+          "label": "Know Your Meme",
+          "url": "https://knowyourmeme.com/videos/296294-capone-oh-no-tiktok-trend"
+        }
+      ],
+      "tone_warnings": []
+    }
+  ]
+}

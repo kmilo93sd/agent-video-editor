@@ -1,0 +1,136 @@
+<!-- gfx:subscribe-prompt | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-subscribe-prompt {
+    --gfx-paper: #ffffff;
+    --gfx-ink: #111418;
+    --gfx-accent: #2563eb;
+    --gfx-accent-ink: #ffffff;
+    --gfx-done: #e5e7eb;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-x: 192px;
+    --gfx-bottom: 150px;
+    --gfx-size: 40px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-subscribe-prompt .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    bottom: var(--gfx-bottom);
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 16px 18px;
+    background: var(--gfx-paper);
+    border-radius: 999px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  }
+  .gfx-subscribe-prompt .gfx-like {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px 10px 16px;
+    color: var(--gfx-ink);
+    font-size: var(--gfx-size);
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 999px;
+    background: var(--gfx-done);
+  }
+  .gfx-subscribe-prompt .gfx-like svg {
+    width: calc(var(--gfx-size) * 1.1);
+    height: auto;
+    transform-origin: 50% 70%;
+  }
+  .gfx-subscribe-prompt .gfx-thumb {
+    fill: var(--gfx-ink);
+  }
+  .gfx-subscribe-prompt .gfx-thumb-on {
+    fill: var(--gfx-accent);
+    opacity: 0;
+  }
+  .gfx-subscribe-prompt .gfx-button {
+    position: relative;
+    padding: 16px 34px;
+    font-size: var(--gfx-size);
+    font-weight: 800;
+    line-height: 1;
+    border-radius: 999px;
+  }
+  .gfx-subscribe-prompt .gfx-state {
+    margin: 0;
+    white-space: nowrap;
+  }
+  .gfx-subscribe-prompt .gfx-off {
+    color: var(--gfx-accent-ink);
+  }
+  .gfx-subscribe-prompt .gfx-on {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gfx-ink);
+    opacity: 0;
+  }
+  .gfx-subscribe-prompt .gfx-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: var(--gfx-accent);
+  }
+  .gfx-subscribe-prompt .gfx-bg-done {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: var(--gfx-done);
+    opacity: 0;
+  }
+  .gfx-subscribe-prompt .gfx-label {
+    position: relative;
+  }
+</style>
+<div class="clip gfx-subscribe-prompt" id="gfx-subscribe-prompt-1" data-start="0" data-duration="4" data-track-index="6">
+  <div class="gfx-body">
+    <div class="gfx-like">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path class="gfx-thumb" d="M6 20 H14 V42 H6 Z M18 20 L27 6 C30 4 34 6 33 10 L31 18 H41 C44 18 46 21 45 24 L41 39 C40 41 38 42 36 42 H18 Z" />
+        <path class="gfx-thumb-on" d="M6 20 H14 V42 H6 Z M18 20 L27 6 C30 4 34 6 33 10 L31 18 H41 C44 18 46 21 45 24 L41 39 C40 41 38 42 36 42 H18 Z" />
+      </svg>
+      <span>Like</span>
+    </div>
+    <div class="gfx-button">
+      <div class="gfx-bg"></div>
+      <div class="gfx-bg-done"></div>
+      <div class="gfx-label">
+        <p class="gfx-state gfx-off">Subscribe</p>
+        <p class="gfx-state gfx-on">Subscribed</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.subscribePrompt = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const likeAt = o.likeAt ?? at + 0.6;
+    const subAt = o.subscribeAt ?? at + 1.4;
+    const body = el.querySelector(".gfx-body");
+    const thumb = el.querySelector(".gfx-like svg");
+    const button = el.querySelector(".gfx-button");
+    tl.fromTo(body, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, at);
+    tl.fromTo(thumb, { rotation: 0, scale: 1 }, { rotation: -14, scale: 1.25, duration: 0.15, ease: "power2.out" }, likeAt);
+    tl.fromTo(thumb, { rotation: -14, scale: 1.25 }, { rotation: 0, scale: 1, duration: 0.25, ease: "power2.inOut", immediateRender: false }, likeAt + 0.15);
+    tl.fromTo(el.querySelector(".gfx-thumb-on"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, likeAt);
+    tl.fromTo(button, { scale: 1 }, { scale: 0.93, duration: 0.08, ease: "power2.in" }, subAt - 0.08);
+    tl.fromTo(button, { scale: 0.93 }, { scale: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, subAt);
+    tl.fromTo(el.querySelector(".gfx-bg-done"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, subAt);
+    tl.fromTo(el.querySelector(".gfx-off"), { opacity: 1 }, { opacity: 0, duration: 0.12 }, subAt);
+    tl.fromTo(el.querySelector(".gfx-on"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, subAt + 0.05);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

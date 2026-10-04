@@ -1,0 +1,112 @@
+<!-- gfx:before-after-split | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-before-after-split {
+    --gfx-paper: #0f1720;
+    --gfx-ink: #ffffff;
+    --gfx-before: #dc2626;
+    --gfx-after: #16a34a;
+    --gfx-divider: #ffffff;
+    --gfx-slot: #1c2733;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-label-size: 40px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-before-after-split .gfx-body {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 108px 192px;
+    background: var(--gfx-paper);
+  }
+  .gfx-before-after-split .gfx-side {
+    position: relative;
+  }
+  .gfx-before-after-split .gfx-slot {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--gfx-slot);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  }
+  .gfx-before-after-split .gfx-slot img,
+  .gfx-before-after-split .gfx-slot video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gfx-before-after-split .gfx-slot .gfx-sample {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 44px;
+    font-weight: 700;
+  }
+  .gfx-before-after-split .gfx-label {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 8px 22px;
+    color: var(--gfx-ink);
+    font-size: var(--gfx-label-size);
+    font-weight: 800;
+    line-height: 1.1;
+    border-radius: 10px;
+  }
+  .gfx-before-after-split .gfx-before .gfx-label {
+    background: var(--gfx-before);
+  }
+  .gfx-before-after-split .gfx-after .gfx-label {
+    background: var(--gfx-after);
+  }
+  .gfx-before-after-split .gfx-divider {
+    position: absolute;
+    left: 50%;
+    top: 108px;
+    bottom: 108px;
+    width: 6px;
+    margin-left: -3px;
+    background: var(--gfx-divider);
+    border-radius: 3px;
+    opacity: 0.85;
+    transform-origin: 50% 0;
+  }
+</style>
+<div class="clip gfx-before-after-split" id="gfx-before-after-split-1" data-start="0" data-duration="6" data-track-index="3">
+  <div class="gfx-body">
+    <div class="gfx-side gfx-before">
+      <p class="gfx-label">Before</p>
+      <div class="gfx-slot"><p class="gfx-sample">12 manual steps</p></div>
+    </div>
+    <div class="gfx-side gfx-after">
+      <p class="gfx-label">After</p>
+      <div class="gfx-slot"><p class="gfx-sample">1 click</p></div>
+    </div>
+    <div class="gfx-divider"></div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.beforeAfterSplit = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const afterAt = o.afterAt ?? at + 1.2;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-before"), { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, at + 0.1);
+    tl.fromTo(el.querySelector(".gfx-divider"), { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, at + 0.3);
+    tl.fromTo(el.querySelector(".gfx-after"), { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, afterAt);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power1.in", immediateRender: false }, at + dur - 0.3);
+    return tl;
+  };
+</script>

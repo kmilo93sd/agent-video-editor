@@ -1,0 +1,111 @@
+<!-- gfx:end-screen | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-end-screen {
+    --gfx-paper: #0f1720;
+    --gfx-paper-2: #182433;
+    --gfx-ink: #ffffff;
+    --gfx-muted: #9fb0c3;
+    --gfx-accent: #ffc531;
+    --gfx-zone: rgba(255, 255, 255, 0.35);
+    --gfx-font: system-ui, sans-serif;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-end-screen .gfx-body {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 20% 10%, var(--gfx-paper-2), var(--gfx-paper));
+  }
+  .gfx-end-screen .gfx-head {
+    position: absolute;
+    left: 192px;
+    top: 120px;
+    margin: 0;
+    color: var(--gfx-ink);
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .gfx-end-screen .gfx-sub {
+    position: absolute;
+    left: 192px;
+    top: 214px;
+    margin: 0;
+    color: var(--gfx-muted);
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  .gfx-end-screen .gfx-zone {
+    position: absolute;
+    border: 4px dashed var(--gfx-zone);
+    border-radius: 14px;
+  }
+  .gfx-end-screen .gfx-video-1 {
+    left: 192px;
+    top: 340px;
+    width: 640px;
+    height: 360px;
+  }
+  .gfx-end-screen .gfx-video-2 {
+    left: 1088px;
+    top: 340px;
+    width: 640px;
+    height: 360px;
+  }
+  .gfx-end-screen .gfx-subscribe {
+    left: 850px;
+    top: 410px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+  }
+  .gfx-end-screen .gfx-zone-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: -24px 0 0;
+    color: var(--gfx-zone);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+  }
+  .gfx-end-screen .gfx-rule {
+    position: absolute;
+    left: 192px;
+    top: 290px;
+    width: 200px;
+    height: 8px;
+    background: var(--gfx-accent);
+    border-radius: 4px;
+    transform-origin: 0 50%;
+  }
+</style>
+<div class="clip gfx-end-screen" id="gfx-end-screen-1" data-start="0" data-duration="20" data-track-index="4">
+  <div class="gfx-body">
+    <p class="gfx-head">Keep going</p>
+    <p class="gfx-sub">The next step is in one of these videos</p>
+    <div class="gfx-rule"></div>
+    <div class="gfx-zone gfx-video-1"><p class="gfx-zone-label">Video</p></div>
+    <div class="gfx-zone gfx-subscribe"><p class="gfx-zone-label">Sub</p></div>
+    <div class="gfx-zone gfx-video-2"><p class="gfx-zone-label">Video</p></div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.endScreen = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-head"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, at + 0.15);
+    tl.fromTo(el.querySelector(".gfx-sub"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, at + 0.3);
+    tl.fromTo(el.querySelector(".gfx-rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, at + 0.3);
+    tl.fromTo(el.querySelectorAll(".gfx-zone"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, at + 0.5);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power1.in", immediateRender: false }, at + dur - 0.5);
+    return tl;
+  };
+</script>

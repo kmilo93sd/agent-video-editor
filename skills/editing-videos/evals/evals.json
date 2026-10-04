@@ -1,0 +1,59 @@
+{
+  "skill_name": "editing-videos",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a 4-minute narrated screen tutorial. Between one phrase and the next there are 2-second silences while the form fills in. How do I fix it without it showing?",
+      "expected_output": "Applies the narrated screen tutorial recipe: cuts the waits where no pixel changes, speeds typing up to 1.5× at most, does not visibly cut inside the form, and leaves 0.4 to 0.6 s between phrases. Does not stretch the voice.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want background music under the voiceover in my YouTube video. What level should I set it at, and where can I get it without copyright problems?",
+      "expected_output": "Puts the music 18 to 25 dB under the voice, with ducking, and masters to -14 LUFS / -1 dBTP. Finds the track in the CC0 library with library/search.mjs and warns about the Content ID risk of other sources, such as Pixabay music.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "In my Spanish-language narration, the synthetic voice reads 'ACHS' as a single word and 'UF' as 'uff'. What do I do?",
+      "expected_output": "Applies the narrated screen tutorial recipe (voice.md): writes the acronyms as they are pronounced in the script's vo field (phonetic spelling), regenerates only that chapter, and verifies with whisper and verify-voice.mjs that they were said correctly.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "In my video a graphic of a journal entry appears and stays empty for 5 seconds before the voice explains it. What is the rule?",
+      "expected_output": "The graphic enters at most 0.5 s before its word, the first content appears within the first second, each element within 0.6 s of the word that names it, and no card stays empty for more than 1 s. The generator fails if this is broken.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I recorded a 12-minute talking-head video in one take on a single camera. It feels slow and there are lots of 'ums' and pauses. How should I cut it?",
+      "expected_output": "Uses the talking-head recipe: opens with the strongest line instead of a greeting, removes filler and repeated takes keeping the best one, trims gaps to about 200-400 ms rather than zero, accepts jump cuts but softens them by alternating a 110-120 % punch-in or covering with b-roll, aims at roughly 2-5 s per shot labelled as creator practice, keeps room tone under the cuts, and adds chapters. Does not invent statistics.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "My travel vlog has wind noise on the bits I say to camera and the music drowns me out in some places. I'm editing in DaVinci Resolve. What levels and steps should I use?",
+      "expected_output": "Uses the vlog recipe and the audio reference: cleans dialogue in order (noise reduction, high-pass, EQ, compression), notes wind cannot be fully removed and recommends a windscreen next time, puts music 18-25 dB under the voice with 6-12 dB ducking, keeps location ambience low under b-roll, warns about background music from locations triggering Content ID, and masters to -14 LUFS / -1 dBTP measured with a loudness meter. Gives the targets as numbers, not menu-only advice.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I want to turn a 40-minute horizontal podcast episode into YouTube Shorts with captions. How do I do it, and how should the captions look?",
+      "expected_output": "Uses the shorts-from-long-form recipe: picks self-contained moments with a strong first 3 s, reframes to 9:16 at 1080x1920 cropping on the speaker shot by shot, keeps each Short within YouTube's 3-minute limit, burns in captions of 1-5 words per page timed to the words, reviewed word by word, at least 20 frames each, placed clear of the platform's bottom and right-side UI without inventing safe-zone percentages, and masters to -14 LUFS. Can give ffmpeg crop and subtitles commands.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "We recorded an interview with three cameras and two lav mics. How do I edit the multicam so it doesn't feel static, and what do I do with the audio?",
+      "expected_output": "Uses the podcast-to-youtube recipe: syncs cameras by audio or timecode and checks sync at start, middle and end; uses one mic per person as the dialogue source and mutes or gates the mic of whoever is not speaking to avoid echo; cuts on speaker changes with J and L cuts, shows reactions only when they add something, uses the wide shot to re-establish; says there is no sourced frequency for angle changes; does not cut in a way that changes meaning; adds chapters per topic and lower thirds; masters -14 LUFS for YouTube and a separate -16 LKFS master for podcast feeds.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "In my HyperFrames tutorial I want an arrow pointing at the Save button, the \"this is fine\" dog when the import fails, and a whoosh and a room tone underneath. My voice is at -17 LUFS. What do I use and how loud?",
+      "expected_output": "Takes the arrow from graphics/ (node graphics/search.mjs arrow), copies the snippet into the composition and calls its gfx function with at anchored to the word that names the button. For the meme, reads memes/README.md and the catalog entry: does not use the original image, recreates the joke with its own graphics or licenses the original, and states its Content ID risk. Finds the whoosh and the room tone with node library/search.mjs --voice -17, which puts effects 15 dB under the voice and ambience 30 dB under it, places the whoosh 2-4 frames before the visual change, and copies both files into the project.",
+      "files": []
+    }
+  ]
+}

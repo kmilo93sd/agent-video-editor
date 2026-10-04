@@ -1,0 +1,74 @@
+<!-- gfx:callout-box | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-callout-box {
+    --gfx-paper: #ffffff;
+    --gfx-ink: #111418;
+    --gfx-muted: #4b5563;
+    --gfx-accent: #ffc531;
+    --gfx-font: system-ui, sans-serif;
+    --gfx-x: 1060px;
+    --gfx-y: 300px;
+    --gfx-w: 560px;
+    --gfx-title-size: 44px;
+    --gfx-text-size: 34px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-callout-box .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+  }
+  .gfx-callout-box .gfx-card {
+    position: relative;
+    padding: 28px 34px 30px;
+    background: var(--gfx-paper);
+    color: var(--gfx-ink);
+    border-radius: 18px;
+    border-left: 10px solid var(--gfx-accent);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  .gfx-callout-box .gfx-card::after {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 40px;
+    border: 14px solid transparent;
+    border-right: 14px solid var(--gfx-accent);
+  }
+  .gfx-callout-box .gfx-title {
+    margin: 0;
+    font-size: var(--gfx-title-size);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .gfx-callout-box .gfx-text {
+    margin: 12px 0 0;
+    font-size: var(--gfx-text-size);
+    line-height: 1.25;
+    color: var(--gfx-muted);
+  }
+</style>
+<div class="clip gfx-callout-box" id="gfx-callout-box-1" data-start="0" data-duration="4" data-track-index="3">
+  <div class="gfx-body">
+    <div class="gfx-card">
+      <p class="gfx-title">API key</p>
+      <p class="gfx-text">Paste it once. The app stores it encrypted.</p>
+    </div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.calloutBox = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-text"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, o.textAt ?? at + 0.2);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

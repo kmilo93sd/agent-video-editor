@@ -1,0 +1,93 @@
+<!-- gfx:key-chips | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-key-chips {
+    --gfx-paper: #f8fafc;
+    --gfx-ink: #111418;
+    --gfx-edge: #9aa3af;
+    --gfx-plus: #ffffff;
+    --gfx-plus-bg: rgba(17, 20, 24, 0.8);
+    --gfx-font: system-ui, sans-serif;
+    --gfx-x: 960px;
+    --gfx-y: 820px;
+    --gfx-size: 48px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-key-chips .gfx-anchor {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    transform: translateX(-50%);
+  }
+  .gfx-key-chips .gfx-body {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .gfx-key-chips .gfx-key {
+    padding-bottom: 7px;
+    background: var(--gfx-edge);
+    border-radius: 14px;
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.35);
+  }
+  .gfx-key-chips .gfx-cap {
+    min-width: calc(var(--gfx-size) * 1.6);
+    padding: 14px 26px 16px;
+    background: var(--gfx-paper);
+    color: var(--gfx-ink);
+    font-size: var(--gfx-size);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    border: 3px solid var(--gfx-edge);
+    border-radius: 14px;
+  }
+  .gfx-key-chips .gfx-plus {
+    width: calc(var(--gfx-size) * 0.9);
+    height: calc(var(--gfx-size) * 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gfx-plus);
+    background: var(--gfx-plus-bg);
+    border-radius: 50%;
+    font-size: calc(var(--gfx-size) * 0.7);
+    font-weight: 800;
+    line-height: 1;
+  }
+</style>
+<div class="clip gfx-key-chips" id="gfx-key-chips-1" data-start="0" data-duration="2.5" data-track-index="6">
+  <div class="gfx-anchor">
+    <div class="gfx-body">
+      <div class="gfx-key"><div class="gfx-cap">Ctrl</div></div>
+      <div class="gfx-plus">+</div>
+      <div class="gfx-key"><div class="gfx-cap">Shift</div></div>
+      <div class="gfx-plus">+</div>
+      <div class="gfx-key"><div class="gfx-cap">P</div></div>
+    </div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.keyChips = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    const keys = [...el.querySelectorAll(".gfx-key")];
+    const pluses = [...el.querySelectorAll(".gfx-plus")];
+    const keyAt = o.keyTimes ?? keys.map((_, i) => at + i * 0.12);
+    const press = o.pressAt ?? keyAt[keyAt.length - 1] + 0.45;
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.05 }, at);
+    keys.forEach((k, i) => {
+      tl.fromTo(k, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, keyAt[i]);
+      if (pluses[i]) tl.fromTo(pluses[i], { opacity: 0 }, { opacity: 1, duration: 0.2 }, keyAt[i] + 0.06);
+      const cap = k.querySelector(".gfx-cap");
+      tl.fromTo(cap, { y: 0 }, { y: 5, duration: 0.08, ease: "power2.in" }, press);
+      tl.fromTo(cap, { y: 5 }, { y: 0, duration: 0.16, ease: "power2.out", immediateRender: false }, press + 0.18);
+    });
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

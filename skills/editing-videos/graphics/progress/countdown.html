@@ -1,0 +1,91 @@
+<!-- gfx:countdown | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-countdown {
+    --gfx-paper: rgba(17, 20, 24, 0.85);
+    --gfx-ink: #ffffff;
+    --gfx-accent: #ffc531;
+    --gfx-track: rgba(255, 255, 255, 0.18);
+    --gfx-font: system-ui, sans-serif;
+    --gfx-size: 360px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-family: var(--gfx-font);
+  }
+  .gfx-countdown .gfx-body {
+    position: relative;
+    width: var(--gfx-size);
+    height: var(--gfx-size);
+    border-radius: 50%;
+    background: var(--gfx-paper);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+  .gfx-countdown svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .gfx-countdown circle {
+    fill: none;
+    stroke-width: 10;
+  }
+  .gfx-countdown .gfx-ring-track {
+    stroke: var(--gfx-track);
+  }
+  .gfx-countdown .gfx-ring {
+    stroke: var(--gfx-accent);
+    stroke-linecap: butt;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+  .gfx-countdown .gfx-digit {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: var(--gfx-ink);
+    font-size: calc(var(--gfx-size) * 0.5);
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    opacity: 0;
+  }
+</style>
+<div class="clip gfx-countdown" id="gfx-countdown-1" data-start="0" data-duration="3.4" data-track-index="3">
+  <div class="gfx-body">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="gfx-ring-track" cx="50" cy="50" r="44" />
+      <circle class="gfx-ring" cx="50" cy="50" r="44" pathLength="100" />
+    </svg>
+    <p class="gfx-digit">3</p>
+    <p class="gfx-digit">2</p>
+    <p class="gfx-digit">1</p>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.countdown = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const step = o.step ?? 1;
+    const body = el.querySelector(".gfx-body");
+    const digits = [...el.querySelectorAll(".gfx-digit")];
+    const total = digits.length * step;
+    tl.fromTo(body, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power3.out" }, at);
+    tl.fromTo(el.querySelector(".gfx-ring"), { strokeDashoffset: 0 }, { strokeDashoffset: 100, duration: total, ease: "none" }, at);
+    digits.forEach((d, i) => {
+      const t = at + i * step;
+      tl.fromTo(d, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power3.out" }, t);
+      if (i < digits.length - 1) tl.fromTo(d, { opacity: 1 }, { opacity: 0, duration: 0.12, immediateRender: false }, t + step - 0.12);
+    });
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

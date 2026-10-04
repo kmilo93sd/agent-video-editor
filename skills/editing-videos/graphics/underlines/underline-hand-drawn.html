@@ -1,0 +1,53 @@
+<!-- gfx:underline-hand-drawn | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-underline-hand-drawn {
+    --gfx-accent: #ff5a4e;
+    --gfx-stroke: 8;
+    --gfx-x: 640px;
+    --gfx-y: 560px;
+    --gfx-w: 520px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gfx-underline-hand-drawn .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+  }
+  .gfx-underline-hand-drawn svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .gfx-underline-hand-drawn path {
+    fill: none;
+    stroke: var(--gfx-accent);
+    stroke-width: var(--gfx-stroke);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+</style>
+<div class="clip gfx-underline-hand-drawn" id="gfx-underline-hand-drawn-1" data-start="0" data-duration="2.5" data-track-index="3">
+  <div class="gfx-body">
+    <svg viewBox="0 0 500 50" aria-hidden="true">
+      <path class="gfx-line" pathLength="100" d="M12 22 C110 14 250 12 488 18 C380 24 220 30 70 38" />
+    </svg>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.underlineHandDrawn = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.05 }, at);
+    tl.fromTo(el.querySelector(".gfx-line"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.55, ease: "power1.inOut" }, at);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

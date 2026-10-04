@@ -1,0 +1,68 @@
+<!-- gfx:light-leak | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-light-leak {
+    --gfx-leak-1: rgba(255, 140, 60, 0.75);
+    --gfx-leak-2: rgba(255, 70, 110, 0.55);
+    --gfx-leak-3: rgba(255, 220, 120, 0.6);
+    --gfx-strength: 0.85;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  .gfx-light-leak .gfx-body {
+    position: absolute;
+    inset: 0;
+    opacity: var(--gfx-strength);
+  }
+  .gfx-light-leak .gfx-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+  .gfx-light-leak .gfx-b1 {
+    left: -360px;
+    top: -260px;
+    width: 1100px;
+    height: 900px;
+    background: radial-gradient(closest-side, var(--gfx-leak-1), transparent);
+  }
+  .gfx-light-leak .gfx-b2 {
+    left: -200px;
+    top: 420px;
+    width: 900px;
+    height: 760px;
+    background: radial-gradient(closest-side, var(--gfx-leak-2), transparent);
+  }
+  .gfx-light-leak .gfx-b3 {
+    left: 1280px;
+    top: -320px;
+    width: 900px;
+    height: 800px;
+    background: radial-gradient(closest-side, var(--gfx-leak-3), transparent);
+  }
+</style>
+<div class="clip gfx-light-leak" id="gfx-light-leak-1" data-start="0" data-duration="2.5" data-track-index="7">
+  <div class="gfx-body">
+    <div class="gfx-blob gfx-b1"></div>
+    <div class="gfx-blob gfx-b2"></div>
+    <div class="gfx-blob gfx-b3"></div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.lightLeak = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const fade = Math.min(0.8, dur / 3);
+    const blobs = [...el.querySelectorAll(".gfx-blob")];
+    const drift = [[420, 60], [360, -80], [-380, 120]];
+    tl.fromTo(blobs, { opacity: 0 }, { opacity: 1, duration: fade, ease: "sine.out" }, at);
+    blobs.forEach((b, i) => {
+      tl.fromTo(b, { x: 0, y: 0 }, { x: drift[i][0], y: drift[i][1], duration: dur, ease: "sine.inOut" }, at);
+    });
+    tl.fromTo(blobs, { opacity: 1 }, { opacity: 0, duration: fade, ease: "sine.in", immediateRender: false }, at + dur - fade);
+    return tl;
+  };
+</script>

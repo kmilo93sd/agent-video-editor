@@ -1,0 +1,58 @@
+<!-- gfx:arrow-hand-drawn | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-arrow-hand-drawn {
+    --gfx-accent: #ff5a4e;
+    --gfx-stroke: 10;
+    --gfx-x: 700px;
+    --gfx-y: 420px;
+    --gfx-w: 420px;
+    --gfx-angle: 0deg;
+    --gfx-flip: 1;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gfx-arrow-hand-drawn .gfx-body {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+  }
+  .gfx-arrow-hand-drawn svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    transform: rotate(var(--gfx-angle)) scaleX(var(--gfx-flip));
+  }
+  .gfx-arrow-hand-drawn path {
+    fill: none;
+    stroke: var(--gfx-accent);
+    stroke-width: var(--gfx-stroke);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+</style>
+<div class="clip gfx-arrow-hand-drawn" id="gfx-arrow-hand-drawn-1" data-start="0" data-duration="2.5" data-track-index="3">
+  <div class="gfx-body">
+    <svg viewBox="0 0 400 200" aria-hidden="true">
+      <path class="gfx-shaft" pathLength="100" d="M24 170 C60 152 72 124 120 114 S210 92 252 96 S330 72 362 52" />
+      <path class="gfx-head" pathLength="100" d="M316 48 Q340 53 364 50 Q350 70 338 92" />
+    </svg>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.arrowHandDrawn = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.1 }, at);
+    tl.fromTo(el.querySelector(".gfx-shaft"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.5, ease: "power1.inOut" }, at);
+    tl.fromTo(el.querySelector(".gfx-head"), { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.2, ease: "power2.out" }, at + 0.48);
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in", immediateRender: false }, at + dur - 0.25);
+    return tl;
+  };
+</script>

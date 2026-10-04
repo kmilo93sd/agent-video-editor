@@ -1,0 +1,50 @@
+<!-- gfx:spotlight-dim | CC0-1.0 | agent-video-editor graphics kit -->
+<style>
+  .gfx-spotlight-dim {
+    --gfx-dim: rgba(8, 10, 14, 0.62);
+    --gfx-edge: rgba(255, 255, 255, 0.9);
+    --gfx-radius: 18px;
+    --gfx-x: 620px;
+    --gfx-y: 380px;
+    --gfx-w: 680px;
+    --gfx-h: 200px;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .gfx-spotlight-dim .gfx-body {
+    position: absolute;
+    inset: 0;
+  }
+  .gfx-spotlight-dim .gfx-hole {
+    position: absolute;
+    left: var(--gfx-x);
+    top: var(--gfx-y);
+    width: var(--gfx-w);
+    height: var(--gfx-h);
+    border-radius: var(--gfx-radius);
+    box-shadow: 0 0 0 3px var(--gfx-edge), 0 0 0 4000px var(--gfx-dim);
+  }
+</style>
+<div class="clip gfx-spotlight-dim" id="gfx-spotlight-dim-1" data-start="0" data-duration="3" data-track-index="3">
+  <div class="gfx-body">
+    <div class="gfx-hole"></div>
+  </div>
+</div>
+<script>
+  window.gfx = window.gfx || {};
+  window.gfx.spotlightDim = function (tl, el, o = {}) {
+    const at = o.at ?? +el.dataset.start;
+    const dur = o.duration ?? +el.dataset.duration;
+    const body = el.querySelector(".gfx-body");
+    const hole = el.querySelector(".gfx-hole");
+    if (o.rect) tl.set(hole, { left: o.rect.x, top: o.rect.y, width: o.rect.w, height: o.rect.h }, at);
+    tl.fromTo(body, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, at);
+    for (const m of o.moves ?? []) {
+      tl.to(hole, { left: m.x, top: m.y, width: m.w, height: m.h, duration: m.duration ?? 0.6, ease: "power2.inOut" }, m.at);
+    }
+    tl.fromTo(body, { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power1.in", immediateRender: false }, at + dur - 0.3);
+    return tl;
+  };
+</script>
