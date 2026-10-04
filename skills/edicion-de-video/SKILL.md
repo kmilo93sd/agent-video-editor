@@ -2,11 +2,19 @@
 name: edicion-de-video
 description: >
   Criterio editorial y proceso para videos de YouTube y redes, con foco en tutoriales de software y videos
-  explicativos. Úsala al planificar, guionar, editar o revisar un video para YouTube, Shorts o Reels; al
-  montar un tutorial con HyperFrames (grabación de pantalla con Playwright, voz con ElevenLabs, generador
-  .mjs); al decidir ritmo, cortes, zoom, gráficos, texto en pantalla, niveles de audio, efectos de sonido,
-  miniatura, título o capítulos; o al buscar efectos y música libres de derechos (biblioteca CC0 incluida).
-  Es la capa editorial sobre las skills de HyperFrames: no las reemplaza, les dice qué hacer.
+  explicativos narrados. Se usa al planificar, guionar, editar o revisar un video para YouTube, Shorts o
+  Reels; al montar un tutorial con HyperFrames (grabación de pantalla con Playwright, voz con ElevenLabs,
+  generador .mjs); al decidir ritmo, cortes, zoom, gráficos, texto en pantalla, niveles de audio, efectos
+  de sonido, miniatura, título o capítulos; o al buscar efectos y música libres de derechos (trae una
+  biblioteca CC0). Es la capa editorial sobre las skills de HyperFrames: no las reemplaza, les dice qué hacer.
+license: MIT (código y textos); CC0-1.0 (audio de biblioteca/)
+compatibility: >
+  Las plantillas piden Node 20 o superior y ffmpeg en el PATH; la voz, una clave de ElevenLabs; la grabación,
+  Playwright; el montaje y el render, HyperFrames. El criterio editorial no requiere nada.
+metadata:
+  author: kmilo93sd
+  version: "1.0.0"
+  repository: https://github.com/kmilo93sd/agent-video-editor
 ---
 
 # Edición de video

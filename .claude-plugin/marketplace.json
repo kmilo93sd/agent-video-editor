@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "agent-video-editor",
+  "description": "Skill de edición de video para agentes de IA.",
+  "owner": { "name": "kmilo93sd" },
+  "plugins": [
+    {
+      "name": "agent-video-editor",
+      "description": "Criterio de editor de video para agentes de IA: ritmo, cortes, voz, gráficos, audio y una biblioteca de sonidos CC0.",
+      "version": "1.0.0",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

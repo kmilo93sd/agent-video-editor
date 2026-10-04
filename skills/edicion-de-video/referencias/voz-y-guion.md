@@ -4,6 +4,15 @@ Cómo escribir lo que se dice y cómo sacarlo de ElevenLabs para que suene natur
 La mecánica general de narración de HyperFrames está en `hyperframes-creative/references/narration.md`.
 Aquí va lo propio de tutoriales en español chileno.
 
+## Contenido
+
+- [Escribir el guion](#escribir-el-guion)
+- [Escribir para la síntesis](#escribir-para-la-síntesis)
+- [Generar con ElevenLabs](#generar-con-elevenlabs)
+- [Medir el volumen por tramo (LUFS)](#medir-el-volumen-por-tramo-lufs)
+- [Verificar con whisper](#verificar-con-whisper)
+- [Fuentes](#fuentes)
+
 ## Escribir el guion
 
 1. **Habla como quien muestra su pantalla, con los datos de la demo.** «Esta panadería tiene ocho

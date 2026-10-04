@@ -1,0 +1,10 @@
+{
+  "name": "agent-video-editor",
+  "version": "1.0.0",
+  "description": "Criterio de editor de video para agentes de IA: ritmo, cortes, voz, gráficos, audio y una biblioteca de sonidos CC0. Integra HyperFrames.",
+  "author": { "name": "kmilo93sd", "url": "https://github.com/kmilo93sd" },
+  "homepage": "https://github.com/kmilo93sd/agent-video-editor",
+  "repository": "https://github.com/kmilo93sd/agent-video-editor",
+  "license": "MIT",
+  "keywords": ["video", "youtube", "edicion", "tutoriales", "hyperframes", "elevenlabs", "cc0", "agent-skills"]
+}

@@ -8,6 +8,14 @@ Niveles, mezcla y cuándo usar efectos. La mecánica se reparte así:
 
 Fuentes al final.
 
+## Contenido
+
+- [Niveles objetivo](#niveles-objetivo)
+- [Cómo se aplica en un proyecto HyperFrames](#cómo-se-aplica-en-un-proyecto-hyperframes)
+- [¿Música en un tutorial?](#música-en-un-tutorial)
+- [Efectos de sonido: cuándo sí y cuándo no](#efectos-de-sonido-cuándo-sí-y-cuándo-no)
+- [Fuentes](#fuentes)
+
 ## Niveles objetivo
 
 | Qué | Objetivo | Fuente |

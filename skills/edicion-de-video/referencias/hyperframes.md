@@ -4,6 +4,15 @@ Esta skill decide **qué** se hace y con qué números. Las skills de HyperFrame
 su contrato. Si algo de aquí choca con una de ellas, gana la de HyperFrames en lo mecánico (atributos,
 determinismo, CLI) y esta en lo editorial (ritmo, velocidad, cuándo un gráfico). Avísalo en la entrega.
 
+## Contenido
+
+- [1. Qué skill de HyperFrames usar en cada paso](#1-qué-skill-de-hyperframes-usar-en-cada-paso)
+- [2. Cómo se escribe cada regla editorial en el contrato](#2-cómo-se-escribe-cada-regla-editorial-en-el-contrato)
+- [3. El patrón del generador](#3-el-patrón-del-generador)
+- [4. Tropiezos ya vividos](#4-tropiezos-ya-vividos)
+- [5. Ciclo de revisión con `npx hyperframes`](#5-ciclo-de-revisión-con-npx-hyperframes)
+- [Fuentes](#fuentes)
+
 ## 1. Qué skill de HyperFrames usar en cada paso
 
 Orden de carga en un proyecto nuevo o retomado:
@@ -161,7 +170,7 @@ son los segundos que hay que mirar en la revisión.
   abriéndose), el modal parece abrirse y cerrarse. `cuadroFijo` extrae en `t - 0,04 s` del segundo en que va
   el clip, y cerca del final del archivo usa `-sseof`. `revisar()` compara el segundo.
 - **Windows: Chromium y Playwright se corren con `node`, no con `bun`.** La versión de `playwright` tiene que
-  calzar con el Chromium instalado en `%LOCALAPPDATA%\ms-playwright`. Si no, `npx playwright install chromium`.
+  calzar con el Chromium instalado en la carpeta `ms-playwright` del caché de Playwright. Si no, `npx playwright install chromium`.
 - **Clips de Playwright (`.webm` VP8/VP9).** No se montan directo: `autoProxy` solo hace una copia si
   Chrome dice que no puede reproducir el formato, y con VP9 suele decir que sí; la vista previa se traba al
   buscar. `grabar.mjs` deja un `.mp4` H.264 con GOP de 15 cuadros, y el montaje usa ese. Renderizar con

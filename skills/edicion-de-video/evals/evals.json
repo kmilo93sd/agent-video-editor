@@ -1,0 +1,29 @@
+{
+  "skill_name": "edicion-de-video",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tengo un tutorial de pantalla narrado de 4 minutos. Entre una frase y otra hay silencios de 2 segundos mientras el formulario se llena. ¿Cómo lo arreglo sin que se note?",
+      "expected_output": "Recorta las esperas donde ningún pixel cambia, sube el tramo hasta 1,5× como máximo, no corta dentro del formulario de forma visible y deja 0,4 a 0,6 s entre frases. No estira la voz.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Quiero música de fondo bajo la voz en off de mi video de YouTube. ¿A qué nivel la pongo y de dónde la saco sin problemas de derechos?",
+      "expected_output": "Pone la música 18 a 25 dB bajo la voz, con ducking, y masteriza a -14 LUFS / -1 dBTP. Busca la pista en la biblioteca CC0 con buscar.mjs y advierte el riesgo de Content ID de otras fuentes, como la música de Pixabay.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "La voz sintética lee 'ACHS' como una palabra y 'UF' como 'uff'. ¿Qué hago?",
+      "expected_output": "Escribe las siglas como se pronuncian en el campo vo del guion (grafía fonética), regenera solo ese capítulo y verifica con whisper y verificar-voz.mjs que se dijeron bien.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "En mi video aparece un gráfico del asiento contable y queda 5 segundos vacío antes de que la voz lo explique. ¿Cuál es la regla?",
+      "expected_output": "El gráfico entra a lo más 0,5 s antes de su palabra, el primer contenido aparece en el primer segundo, cada elemento a 0,6 s o menos de la palabra que lo nombra y ninguna tarjeta queda vacía más de 1 s. El generador falla si se rompe.",
+      "files": []
+    }
+  ]
+}
